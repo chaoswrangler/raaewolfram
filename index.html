@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raae Wolfram — Security Strategy, Go-to-Market & AI</title>
+<meta name="description" content="Raae Wolfram starts new security programs and turns them into revenue. Security strategy, go-to-market, partners, and AI agents at Microsoft.">
+<meta property="og:title" content="Raae Wolfram — Security Strategy, Go-to-Market & AI">
+<meta property="og:description" content="I start new security programs and turn them into revenue.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/portrait.jpg">
+<meta name="theme-color" content="#06101f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --n0:#030915; --n1:#06101f; --n2:#0a1830; --n3:#0f2240; --n4:#16305a;
+  --line:#1b3762; --line2:#2a5189;
+  --b1:#1f5fd1; --b2:#3d82ff; --b3:#7cafff; --b4:#b8d5ff; --cy:#5fd0ff;
+  --ice:#edf4ff; --ice2:#dbe8fd; --ink:#0a1a35; --ink2:#3a5079;
+  --t1:#edf4ff; --t2:#b3c6e3; --t3:#7690b6;
+  --disp:"Bricolage Grotesque",system-ui,sans-serif;
+  --sans:"Instrument Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --wrap:1180px; --pad:40px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);font-size:18px;line-height:1.65;color:var(--t1);background:var(--n1);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+::selection{background:var(--b2);color:#fff}
+:focus-visible{outline:2px solid var(--cy);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
+img{display:block;max-width:100%}
+
+/* ---------- element tile (brand mark) ---------- */
+.el{position:relative;display:grid;grid-template-rows:auto 1fr auto;aspect-ratio:1;border-radius:14%;
+  background:linear-gradient(150deg,#2a6cf0,#1747b5 55%,#0d2d78);color:#fff;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 18px 40px -16px rgba(31,95,209,.8);padding:9%}
+.el .z{font-family:var(--mono);font-size:.15em;line-height:1;opacity:.85}
+.el .sym{font-family:var(--disp);font-weight:800;font-size:.56em;line-height:.9;letter-spacing:-.04em;align-self:center;justify-self:center}
+.el .nm{font-family:var(--sans);font-weight:600;font-size:.13em;text-align:center;letter-spacing:.02em}
+.el .m{position:absolute;top:9%;right:10%;font-family:var(--mono);font-size:.11em;opacity:.7}
+
+/* ---------- monogram ---------- */
+.mono{display:grid;place-items:center;width:38px;height:38px;border-radius:10px;background:linear-gradient(150deg,#2a6cf0,#1747b5);color:#fff;font-family:var(--disp);font-weight:800;font-size:16px;letter-spacing:-.04em;box-shadow:inset 0 1px 0 rgba(255,255,255,.25)}
+/* ---------- header (HUD) ---------- */
+header{position:sticky;top:0;z-index:40;background:linear-gradient(180deg,rgba(3,9,21,.92),rgba(6,16,31,.78));backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);border-bottom:1px solid rgba(95,208,255,.16)}
+header::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,var(--cy) 20%,var(--b2) 50%,var(--cy) 80%,transparent);opacity:.55;background-size:200% 100%;animation:sweep 6s linear infinite}
+@keyframes sweep{from{background-position:200% 0}to{background-position:-200% 0}}
+header .wrap{display:flex;align-items:center;height:68px;gap:18px;max-width:1280px}
+.mk{display:flex;align-items:center;gap:12px;text-decoration:none}
+.mk .mono{position:relative}
+.wolfmark{color:#fff;padding:4px}
+.wolfmark svg{width:100%;height:100%}
+.wolfmark svg{width:100%;height:100%}
+.mk .mono::after{content:"";position:absolute;inset:-5px;border:1px solid rgba(95,208,255,.35);border-radius:13px;clip-path:polygon(0 0,35% 0,35% 2px,2px 2px,2px 35%,0 35%,0 100%,0 100%,35% 100%,35% calc(100% - 2px),2px calc(100% - 2px),2px 65%,0 65%, 0 0,100% 0,100% 35%,calc(100% - 2px) 35%,calc(100% - 2px) 2px,65% 2px,65% 0,100% 0,100% 100%,65% 100%,65% calc(100% - 2px),calc(100% - 2px) calc(100% - 2px),calc(100% - 2px) 65%,100% 65%)}
+.mk-t{display:flex;flex-direction:column;line-height:1.1}
+.mk-t b{font-family:var(--disp);font-weight:700;font-size:18px;letter-spacing:-.015em}
+.mk-t small{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;color:var(--cy);margin-top:3px}
+nav{display:flex;gap:4px;margin-left:auto;padding:4px;border:1px solid rgba(42,81,137,.6);border-radius:12px;background:rgba(3,9,21,.45)}
+nav a{position:relative;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--t2);text-decoration:none;padding:9px 12px;border-radius:8px;transition:.2s;display:flex;align-items:center;gap:7px}
+nav a i{font-style:normal;font-size:10px;color:var(--t3);transition:.2s}
+nav a:hover{color:var(--ice);background:rgba(61,130,255,.12)}
+nav a.on{color:#fff;background:linear-gradient(180deg,rgba(61,130,255,.28),rgba(31,95,209,.18));box-shadow:inset 0 0 0 1px rgba(95,208,255,.4),0 0 18px -6px rgba(95,208,255,.6)}
+nav a.on i,nav a:hover i{color:var(--cy)}
+.hud-meta{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;color:var(--t3);padding:0 4px}
+.hud-meta b{color:var(--ice);font-weight:500}
+.pulse{width:7px;height:7px;border-radius:50%;background:var(--cy);box-shadow:0 0 0 0 rgba(95,208,255,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(95,208,255,0)}100%{box-shadow:0 0 0 0 rgba(95,208,255,0)}}
+.hbtn{position:relative;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;text-decoration:none;padding:10px 16px;border-radius:9px;color:#fff;background:linear-gradient(135deg,var(--b2),var(--b1));box-shadow:0 0 0 1px rgba(95,208,255,.45),0 8px 24px -8px rgba(61,130,255,.9);transition:.2s;white-space:nowrap}
+.hbtn:hover{box-shadow:0 0 0 1px var(--cy),0 0 26px -4px rgba(95,208,255,.9)}
+.menu{display:none;margin-left:auto;background:rgba(3,9,21,.5);border:1px solid rgba(95,208,255,.4);color:var(--ice);font:500 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;padding:9px 13px;border-radius:9px;cursor:pointer}
+.hud-prog{position:absolute;left:0;bottom:-1px;height:2px;width:0;background:linear-gradient(90deg,var(--b2),var(--cy));box-shadow:0 0 10px var(--cy)}
+
+/* HUD corner brackets */
+.hud{position:relative}
+.hud > .c{position:absolute;width:18px;height:18px;border-color:var(--cy);border-style:solid;opacity:.8;z-index:3;pointer-events:none}
+.hud > .c.tl{top:-8px;left:-8px;border-width:2px 0 0 2px;border-top-left-radius:6px}
+.hud > .c.tr{top:-8px;right:-8px;border-width:2px 2px 0 0;border-top-right-radius:6px}
+.hud > .c.bl{bottom:-8px;left:-8px;border-width:0 0 2px 2px;border-bottom-left-radius:6px}
+.hud > .c.br{bottom:-8px;right:-8px;border-width:0 2px 2px 0;border-bottom-right-radius:6px}
+
+/* ---------- shared ---------- */
+section{padding:112px 0}
+.label{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--b3)}
+.label i{font-style:normal;display:grid;place-items:center;width:26px;height:26px;border-radius:6px;background:linear-gradient(150deg,#2a6cf0,#1747b5);color:#fff;font-size:11px;letter-spacing:0}
+h2{font-family:var(--disp);font-weight:800;font-size:clamp(32px,4.6vw,58px);line-height:1.03;letter-spacing:-.04em;margin-top:16px;max-width:19ch}
+.lede{font-size:20px;color:var(--t2);max-width:56ch;margin-top:16px;line-height:1.6}
+.rv{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+
+/* ---------- photo slots ---------- */
+.photo{position:relative;overflow:hidden;background:
+  repeating-linear-gradient(135deg,rgba(124,175,255,.07) 0 12px,transparent 12px 24px),
+  linear-gradient(160deg,var(--n4),var(--n2));display:grid;place-items:center;text-align:center;color:var(--t2)}
+.photo .ph{padding:16px;display:grid;gap:8px;justify-items:center}
+.photo .ph svg{width:42px;height:42px;opacity:.7}
+.photo .ph b{font-weight:600;font-size:15px;color:var(--ice)}
+.photo .ph code{font-family:var(--mono);font-size:12px;color:var(--b3);background:rgba(3,9,21,.5);padding:3px 8px;border-radius:5px}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.photo.loaded .ph{display:none}
+
+/* ================= HERO ================= */
+.hero{position:relative;padding:64px 0 0;overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:-10% -10% 0 -10%;z-index:-2;background:
+  radial-gradient(820px 560px at 80% 12%,rgba(61,130,255,.42),transparent 62%),
+  radial-gradient(700px 520px at 5% 75%,rgba(31,95,209,.24),transparent 60%),
+  radial-gradient(600px 400px at 60% 100%,rgba(95,208,255,.13),transparent 60%)}
+.hero .wm{position:absolute;z-index:-1;right:-14%;top:-6%;width:clamp(420px,46vw,700px);color:rgba(140,190,255,.26);pointer-events:none}
+.hero .wm svg{width:100%;height:auto;display:block}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center}
+.kick{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:13px;color:var(--t2);letter-spacing:.04em}
+.kick span{padding:6px 12px;border:1px solid var(--line2);border-radius:999px;background:rgba(10,24,48,.55)}
+.kick span.live{display:inline-flex;align-items:center;gap:8px;color:var(--ice)}
+.kick span.live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cy);box-shadow:0 0 0 4px rgba(95,208,255,.2)}
+h1{font-family:var(--disp);font-weight:800;font-size:clamp(48px,7vw,96px);line-height:.95;letter-spacing:-.05em;margin-top:22px}
+h1 .tag{display:block;font-size:.34em;line-height:1.15;letter-spacing:-.03em;margin-top:18px;max-width:17em;background:linear-gradient(90deg,var(--b3),var(--cy));-webkit-background-clip:text;background-clip:text;color:transparent}
+.intro{font-size:20px;line-height:1.6;color:var(--t2);max-width:31em;margin-top:24px}
+.intro b{color:var(--ice);font-weight:600}
+.acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-weight:600;font-size:16px;padding:14px 22px;border-radius:12px;transition:.2s;min-height:48px}
+.btn.a{background:var(--b2);color:#fff;box-shadow:0 12px 30px -12px rgba(61,130,255,.8)}
+.btn.a:hover{background:var(--b3);color:var(--n1)}
+.btn.b{border:1px solid var(--line2);color:var(--ice);background:rgba(10,24,48,.55)}
+.btn.b:hover{background:var(--n3);border-color:var(--b3)}
+
+.pcol{position:relative;justify-self:end;width:100%;max-width:400px}
+.portrait{aspect-ratio:4/5;border-radius:28px;border:1px solid var(--line2);box-shadow:0 40px 80px -40px rgba(0,0,0,.8)}
+.pcol .el{position:absolute;width:136px;font-size:136px;left:-48px;bottom:-34px;z-index:2}
+.nowb{position:absolute;right:-16px;top:28px;z-index:2;background:rgba(6,16,31,.9);border:1px solid var(--line2);border-radius:14px;padding:12px 16px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.nowb small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--cy)}
+.nowb b{display:block;font-weight:600;font-size:14.5px;line-height:1.35;margin-top:2px}
+
+/* stats as tiles */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:88px}
+.stat{position:relative;padding:22px 24px 24px;border-radius:18px;overflow:hidden;isolation:isolate;
+  background:radial-gradient(320px 160px at 100% 0%,rgba(95,208,255,.18),transparent 70%),linear-gradient(170deg,rgba(26,58,108,.8),rgba(6,16,31,.9));
+  border:1px solid rgba(95,208,255,.2);transition:transform .3s,border-color .3s,box-shadow .3s}
+.stat::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;background-image:linear-gradient(rgba(124,175,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(124,175,255,.07) 1px,transparent 1px);background-size:22px 22px;mask-image:linear-gradient(180deg,#000,transparent 85%)}
+.stat::after{content:"";position:absolute;left:0;right:0;top:-40%;height:40%;z-index:-1;background:linear-gradient(180deg,transparent,rgba(95,208,255,.14),transparent);transform:translateY(0);opacity:0}
+.stat:hover{transform:translateY(-5px);border-color:rgba(95,208,255,.55);box-shadow:0 0 0 1px rgba(95,208,255,.15),0 24px 60px -24px rgba(61,130,255,.85)}
+.stat:hover::after{animation:scan 1.4s ease-out}
+@keyframes scan{0%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(350%)}}
+.stat .cn{position:absolute;width:12px;height:12px;border:solid var(--cy);opacity:.55;transition:.3s}
+.stat .cn.tl{top:8px;left:8px;border-width:1.5px 0 0 1.5px}.stat .cn.tr{top:8px;right:8px;border-width:1.5px 1.5px 0 0}
+.stat .cn.bl{bottom:8px;left:8px;border-width:0 0 1.5px 1.5px}.stat .cn.br{bottom:8px;right:8px;border-width:0 1.5px 1.5px 0}
+.stat:hover .cn{opacity:1;width:18px;height:18px}
+.st-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.stat .i{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--cy);white-space:nowrap}
+.stat .org{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--t2);padding:3px 8px;border-radius:999px;border:1px solid rgba(95,208,255,.3);background:rgba(3,9,21,.5)}
+.stat .v{font-family:var(--disp);font-weight:800;font-size:clamp(34px,3.5vw,52px);line-height:1;letter-spacing:-.045em;margin-top:18px;white-space:nowrap;background:linear-gradient(180deg,#fff 30%,var(--b3));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 18px rgba(95,208,255,.35));font-variant-numeric:tabular-nums}
+.stat .l{font-size:15.5px;color:var(--t2);margin-top:12px;line-height:1.45;padding-top:12px;border-top:1px solid rgba(95,208,255,.15)}
+.cos{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 28px;margin-top:40px;padding:22px 0 8px;border-top:1px solid var(--line)}
+.cos small{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;color:var(--t3)}
+.cos{justify-content:flex-start;gap:14px 40px}
+.cg{display:flex;align-items:center;flex-wrap:wrap;gap:8px 26px}
+.cg.now{padding-right:40px;border-right:1px solid var(--line)}
+.cg.now small{color:var(--cy)}
+.cg.now span{color:var(--ice)}
+.cos span{font-family:var(--disp);font-weight:700;font-size:19px;color:var(--t2);letter-spacing:-.015em}
+
+/* ================= WHAT I DO ================= */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+.pillar{position:relative;padding:32px 28px 28px;border-radius:22px;background:linear-gradient(180deg,rgba(15,34,64,.9),rgba(8,20,40,.9));border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .25s,border-color .25s}
+.pillar:hover{transform:translateY(-4px);border-color:var(--line2)}
+.pillar .no{font-family:var(--disp);font-weight:800;font-size:64px;line-height:.8;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1.2px var(--line2)}
+.pillar h3{font-family:var(--disp);font-weight:700;font-size:25px;letter-spacing:-.025em;line-height:1.15;margin-top:22px}
+.pillar p{font-size:17px;color:var(--t2);margin-top:10px;flex:1}
+.pillar .proof{margin-top:22px;padding-top:16px;border-top:1px solid var(--line);display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.pillar .proof b{font-family:var(--disp);font-weight:800;font-size:28px;letter-spacing:-.03em;color:var(--cy);white-space:nowrap}
+.pillar .proof span{font-size:15px;color:var(--t2);line-height:1.4}
+.pillar .proof a{color:var(--cy)}
+
+/* ================= OUTCOMES ================= */
+.results{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:48px}
+.res{border-radius:22px;border:1px solid var(--line);background:rgba(10,24,48,.8);overflow:hidden;display:flex;flex-direction:column}
+.res-top{padding:28px 30px 24px;background:radial-gradient(520px 220px at 100% 0%,rgba(61,130,255,.3),transparent 70%);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;align-items:flex-end}
+.res-top .co{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;color:var(--b3)}
+.res-top h3{font-family:var(--disp);font-weight:700;font-size:24px;letter-spacing:-.025em;line-height:1.15;margin-top:8px;max-width:17ch}
+.res-top .big{text-align:right;flex:none}
+.res-top .big b{display:block;font-family:var(--disp);font-weight:800;font-size:44px;line-height:1;letter-spacing:-.045em;background:linear-gradient(180deg,#fff,var(--b3));-webkit-background-clip:text;background-clip:text;color:transparent}
+.res-top .big span{font-size:13.5px;color:var(--t2);display:block;max-width:15ch;margin-left:auto;line-height:1.35;margin-top:6px}
+.steps{list-style:none;padding:22px 30px 28px;display:grid;gap:14px}
+.steps li{display:grid;grid-template-columns:96px 1fr;gap:14px;font-size:16.5px;color:var(--t2);line-height:1.5}
+.steps li em{font-style:normal;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;color:var(--t3);padding-top:4px}
+.steps li:last-child{color:var(--ice)}
+.steps li:last-child em{color:var(--cy)}
+.res.wide{grid-column:1/-1}
+.res.wide .steps{grid-template-columns:repeat(3,1fr);gap:24px}
+.res.wide .steps li{grid-template-columns:1fr;gap:4px}
+.res-link{padding:0 30px 28px;margin-top:auto}
+
+/* ================= PROJECTS ================= */
+.pj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.pj{position:relative;border-radius:22px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(15,34,64,.9),rgba(8,20,40,.9));padding:26px 26px 24px;display:flex;flex-direction:column;gap:12px;transition:transform .25s,border-color .25s}
+.pj:hover{transform:translateY(-4px);border-color:var(--line2)}
+.pj.feat{grid-column:span 2;grid-row:span 2;padding:36px 36px 32px;background:
+  radial-gradient(560px 300px at 100% 0%,rgba(95,208,255,.25),transparent 65%),
+  radial-gradient(500px 300px at 0% 100%,rgba(31,95,209,.35),transparent 65%),
+  linear-gradient(160deg,var(--n4),var(--n2));border-color:var(--line2)}
+.pj.feat h3{font-size:clamp(34px,4vw,52px)}
+.pj.feat p{font-size:18px;max-width:46ch}
+.pj.feat .btn{align-self:flex-start;margin-top:auto}
+.pj-h{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.pj .st{font-family:var(--mono);font-size:11px;letter-spacing:.12em;padding:4px 9px;border-radius:999px;border:1px solid var(--line2);color:var(--t2)}
+.pj .st.live{color:var(--n1);background:var(--cy);border-color:var(--cy)}
+.pj .st.dev{color:var(--b4);border-color:var(--b2)}
+.pj .tp{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--t3);text-transform:uppercase}
+.pj h3{font-family:var(--disp);font-weight:800;font-size:26px;letter-spacing:-.035em;line-height:1.05}
+.pj p{font-size:16px;color:var(--t2);line-height:1.55;flex:1}
+.pj-meta{display:flex;flex-wrap:wrap;gap:6px}
+.pj-meta span{font-size:12.5px;padding:4px 9px;border-radius:7px;background:rgba(3,9,21,.45);border:1px solid var(--line);color:var(--t2)}
+.pj.wide{grid-column:1/-1}
+.pj.wide p{max-width:70ch}
+@media (max-width:1240px){.hud-meta{display:none}}
+@media (max-width:1060px){.pj-grid{grid-template-columns:1fr 1fr}.pj.feat{grid-column:1/-1;grid-row:auto}}
+@media (max-width:720px){.pj-grid{grid-template-columns:1fr;gap:14px}.pj{padding:22px 20px}.pj.feat{padding:26px 22px}.pj.feat .btn{width:100%}}
+
+/* ================= WORKING WITH ME ================= */
+.light{background:linear-gradient(180deg,var(--ice),var(--ice2));color:var(--ink);border-radius:40px 40px 0 0;position:relative;z-index:2;overflow:hidden}
+.light .wm2{position:absolute;right:-40px;bottom:-60px;width:460px;color:rgba(31,95,209,.13);pointer-events:none}
+.light .wm2 svg{width:100%;height:auto;display:block}
+.light .label{color:var(--b1)}
+.ww{display:block;position:relative}
+.ww .brain{grid-template-columns:repeat(4,1fr)}
+@media (max-width:1060px){.ww .brain{grid-template-columns:1fr 1fr}}
+.candid{aspect-ratio:4/5;border-radius:26px;box-shadow:0 30px 70px -30px rgba(10,26,53,.45)}
+.light .photo{background:repeating-linear-gradient(135deg,rgba(31,95,209,.08) 0 12px,transparent 12px 24px),linear-gradient(160deg,#c9dcfb,#a9c6f5);color:var(--ink2)}
+.light .photo .ph b{color:var(--ink)}
+.light .photo .ph code{background:rgba(255,255,255,.65);color:var(--b1)}
+.light h2{color:var(--ink)}
+.wolf{margin-top:22px;padding:22px 24px;border-radius:18px;background:var(--ink);color:var(--ice);display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center}
+.wolf .el{width:74px;font-size:74px;box-shadow:none}
+.wolf p{font-size:18.5px;line-height:1.5}
+.wolf p b{color:var(--cy);font-weight:600}
+.voice{font-size:19px;line-height:1.65;color:var(--ink2);margin-top:22px}
+.voice p+p{margin-top:14px}
+.voice b{color:var(--ink);font-weight:600}
+.lists{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px}
+.lst{background:#fff;border-radius:20px;padding:26px 24px;box-shadow:0 1px 0 rgba(10,26,53,.06),0 20px 40px -28px rgba(10,26,53,.35)}
+.lst h3{font-family:var(--disp);font-weight:700;font-size:20px;letter-spacing:-.02em;margin-bottom:14px;color:var(--ink)}
+.lst ul{list-style:none;display:grid;gap:11px}
+.lst li{font-size:16.5px;line-height:1.45;color:var(--ink2);padding-left:28px;position:relative}
+.lst li::before{content:"";position:absolute;left:0;top:11px;width:16px;height:3px;border-radius:2px;background:linear-gradient(90deg,#2a6cf0,var(--cy))}
+
+
+/* crest */
+.crest{margin:0;position:sticky;top:96px}
+.crest img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:24px;box-shadow:0 30px 70px -30px rgba(10,26,53,.6),0 0 0 1px rgba(10,26,53,.08)}
+.crest figcaption{margin-top:12px;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);text-align:center}
+@media (max-width:1060px){.crest{position:static;max-width:440px}}
+/* brain cards */
+.brain{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+.bc{background:#fff;border-radius:20px;padding:24px 24px 26px;box-shadow:0 1px 0 rgba(10,26,53,.06),0 20px 40px -28px rgba(10,26,53,.35);position:relative;overflow:hidden}
+.bc::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(#2a6cf0,var(--cy))}
+.bc span{font-family:var(--mono);font-size:12px;color:var(--b1);letter-spacing:.1em}
+.bc h3{font-family:var(--disp);font-weight:700;font-size:21px;letter-spacing:-.02em;line-height:1.2;color:var(--ink);margin:8px 0 8px}
+.bc p{font-size:16px;line-height:1.55;color:var(--ink2)}
+.close-line{margin-top:26px;font-family:var(--disp);font-weight:700;font-size:24px;letter-spacing:-.02em;color:var(--b1)}
+@media (max-width:720px){.brain{grid-template-columns:1fr}.close-line{font-size:21px}}
+
+/* ================= EXPERIENCE ================= */
+.dark2{background:var(--n1);position:relative;z-index:3;border-radius:40px 40px 0 0;margin-top:-40px}
+.exp{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;margin-top:48px}
+.tl{position:relative;padding-left:30px}
+.tl::before{content:"";position:absolute;left:7px;top:10px;bottom:10px;width:2px;background:linear-gradient(var(--cy),var(--b1) 40%,var(--line))}
+.job{position:relative;padding:0 0 28px}
+.job::before{content:"";position:absolute;left:-30px;top:7px;width:16px;height:16px;border-radius:5px;background:var(--n1);border:2px solid var(--b2);transform:rotate(45deg) scale(.85)}
+.job.now::before{background:var(--cy);border-color:var(--cy);box-shadow:0 0 0 6px rgba(95,208,255,.18)}
+.job .d{font-family:var(--mono);font-size:12.5px;color:var(--t3)}
+.job h3{font-family:var(--disp);font-weight:700;font-size:21px;letter-spacing:-.02em;line-height:1.25;margin-top:4px}
+.job .co{color:var(--b3);font-weight:500;font-size:16px}
+.job p{font-size:16.5px;color:var(--t2);margin-top:6px;max-width:52ch}
+.side{display:grid;gap:16px;align-content:start}
+.card{border-radius:20px;border:1px solid var(--line);background:rgba(10,24,48,.8);padding:24px}
+.card h3{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--b3);font-weight:500;margin-bottom:12px}
+.card li{list-style:none;font-size:16px;padding:9px 0;border-top:1px solid var(--line);line-height:1.4}
+.card li:first-child{border-top:0;padding-top:0}
+.card li span{display:block;font-size:14px;color:var(--t3)}
+.stage{aspect-ratio:16/10;border-radius:20px;border:1px solid var(--line)}
+
+/* ================= CONTACT ================= */
+.contact{padding:24px 0 104px}
+.cbox{position:relative;overflow:hidden;border-radius:32px;padding:64px;background:
+  radial-gradient(700px 360px at 85% -10%,rgba(95,208,255,.35),transparent 60%),
+  radial-gradient(700px 400px at 0% 100%,rgba(31,95,209,.5),transparent 60%),
+  linear-gradient(160deg,var(--n4),var(--n2));border:1px solid var(--line2);display:block}
+.cbox{display:grid!important;grid-template-columns:1fr 280px;gap:40px;align-items:center}
+.cwolf{color:rgba(150,200,255,.75);filter:drop-shadow(0 0 18px rgba(95,208,255,.35))}
+.cwolf svg{width:100%;height:auto;display:block}
+.cbox h2{max-width:17ch;margin-top:14px}
+.cbox .acts{margin-top:26px}
+.cbox .lede{color:var(--t1);opacity:.88}
+.cbox .el{width:200px;font-size:200px}
+footer{border-top:1px solid var(--line);padding:24px 0 40px;font-size:14px;color:var(--t3)}
+footer .wrap{display:flex;justify-content:space-between;gap:10px 24px;flex-wrap:wrap}
+footer em{font-style:normal;color:var(--t2)}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width:1060px){
+  nav,.hbtn,.hud-meta{display:none}.menu{display:block}
+  nav.open{display:flex;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:rgba(3,9,21,.97);border:0;border-bottom:1px solid rgba(95,208,255,.2);border-radius:0;padding:8px var(--pad) 16px}
+  nav.open a{padding:16px 4px;font-size:13px;border-radius:0;border-bottom:1px solid var(--line)}
+  .hero-grid{grid-template-columns:1fr 320px;gap:44px}
+  .pcol .el{width:110px;font-size:110px;left:-30px}
+  .stats{grid-template-columns:1fr 1fr}
+  .pillars{grid-template-columns:1fr}
+  .pillar{display:grid;grid-template-columns:90px 1fr;column-gap:20px}
+  .pillar .no{grid-row:1/4}
+  .pillar h3{margin-top:0}
+  .results{grid-template-columns:1fr}
+  .ww{grid-template-columns:1fr;gap:36px}
+  .candid{max-width:520px;aspect-ratio:3/2}
+  .exp{grid-template-columns:1fr}
+  .side{grid-template-columns:1fr 1fr}
+  .stage{grid-column:1/-1}
+}
+@media (max-width:720px){
+  :root{--pad:20px}
+  body{font-size:17px}
+  section{padding:76px 0}
+  .hero{padding:28px 0 0}
+  .hero .wm{position:absolute;z-index:-1;right:-14%;top:-6%;width:clamp(420px,46vw,700px);color:rgba(140,190,255,.26);pointer-events:none}
+.hero .wm svg{width:100%;height:auto;display:block}
+  .hero-grid{grid-template-columns:1fr;gap:0}
+  .pcol{order:-1;justify-self:stretch;max-width:none;display:grid;grid-template-columns:118px 1fr;gap:16px;align-items:end;margin-bottom:22px}
+  .portrait{aspect-ratio:1;border-radius:20px}
+  .portrait-hud .c{width:12px;height:12px}
+  .portrait .ph b{font-size:12px}.portrait .ph code{display:none}.portrait .ph svg{width:28px;height:28px}
+  .pcol .el{position:static;width:72px;font-size:72px;grid-column:2;grid-row:1;align-self:start;display:none}
+  .nowb{position:static;grid-column:2;grid-row:1;padding:12px 14px}
+  .nowb b{font-size:14px}
+  .kick{font-size:12px;gap:8px}
+  .kick span{padding:5px 10px}
+  h1{font-size:clamp(44px,13vw,60px);margin-top:18px}
+  h1 .tag{font-size:.4em}
+  .intro{font-size:18px}
+  .acts .btn{flex:1 1 auto}
+  .acts .btn.a{flex-basis:100%}
+  .stats{margin-top:44px;gap:10px}
+  .stat{padding:16px 16px 14px}
+  .stat .l{font-size:14px}
+  .stat .v{font-size:clamp(28px,9vw,40px)}
+  .stat .org{display:none}
+  .cos{justify-content:flex-start;gap:6px 18px}
+  .cg small{width:100%}
+  .cg.now{padding-right:0;border-right:0;width:100%}
+  .cos span{font-size:16px}
+  .lede{font-size:18px}
+  .pillar{grid-template-columns:1fr;padding:26px 22px 22px}
+  .pillar .no{grid-row:auto;font-size:48px}
+  .pillar h3{margin-top:16px;font-size:23px}
+  .res{border-radius:18px}
+  .res-top{flex-direction:column;align-items:flex-start;padding:22px 20px 18px;gap:12px}
+  .res-top .big{text-align:left}.res-top .big span{margin-left:0;max-width:none}
+  .res-top .big b{font-size:38px}
+  .steps{padding:18px 20px 22px}
+  .steps li,.res.wide .steps{grid-template-columns:1fr;gap:2px}
+  .res.wide .steps{gap:14px}
+  .res-link{padding:0 20px 22px}.res-link .btn{width:100%}
+  .light,.dark2{border-radius:26px 26px 0 0}
+  .light .wm2{position:absolute;right:-40px;bottom:-60px;width:460px;color:rgba(31,95,209,.13);pointer-events:none}
+.light .wm2 svg{width:100%;height:auto;display:block}
+  .candid{aspect-ratio:4/3}
+  .wolf{grid-template-columns:1fr;padding:20px}
+  .wolf .el{width:60px;font-size:60px}
+  .voice{font-size:17.5px}
+  .lists{grid-template-columns:1fr}
+  .side{grid-template-columns:1fr}
+  .cbox{grid-template-columns:1fr;padding:36px 22px;border-radius:24px}
+  .cbox{grid-template-columns:1fr!important}.cwolf{display:none}
+  .cbox .acts .btn{flex:1 1 100%}
+}
+@media (prefers-reduced-motion:reduce){
+  header::before,.pulse{animation:none}
+  *,*::before,*::after{transition:none!important;animation:none!important}
+  .rv{opacity:1;transform:none} html{scroll-behavior:auto}
+}
+
+
+/* optional photos: hidden until the file exists */
+.photo.opt{display:none}
+.photo.opt.loaded{display:grid}
+/* hero ID panel */
+.idp{justify-self:end;width:100%;max-width:420px;border-radius:22px;border:1px solid rgba(95,208,255,.25);
+  background:radial-gradient(380px 200px at 100% 0%,rgba(95,208,255,.16),transparent 70%),linear-gradient(170deg,rgba(22,48,90,.85),rgba(6,16,31,.92));
+  box-shadow:0 40px 80px -40px rgba(0,0,0,.8),0 0 60px -20px rgba(61,130,255,.5);padding:22px 24px 10px;backdrop-filter:blur(8px)}
+.idp .portrait.loaded{aspect-ratio:4/5;border-radius:16px;margin-bottom:18px}
+.idp-h{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--t3);padding-bottom:12px;border-bottom:1px solid rgba(95,208,255,.18)}
+.idp-h .ok{color:var(--cy)}
+.idp dl>div{display:grid;grid-template-columns:104px 1fr;gap:12px;padding:13px 0;border-bottom:1px solid rgba(42,81,137,.45)}
+.idp dl>div:last-child{border-bottom:0}
+.idp dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--t3);padding-top:3px}
+.idp dd{font-size:15px;line-height:1.45;color:var(--ice)}
+.idp dd em{display:block;font-style:normal;font-family:var(--mono);font-size:12px;color:var(--cy);margin-top:2px}
+h1 .say{display:block;font-family:var(--mono);font-size:13px;font-weight:400;letter-spacing:.1em;color:var(--t2);margin-top:12px;-webkit-text-fill-color:currentColor}
+h1 .say b{color:var(--cy);font-weight:500}
+@media (max-width:1060px){.hero-grid{grid-template-columns:1fr!important}.idp{justify-self:start;max-width:560px;margin-top:36px}}
+@media (max-width:720px){.idp dl>div{grid-template-columns:92px 1fr}.idp{padding:18px 18px 6px}}
+
+/* ================= SHIP CONSOLE ================= */
+.hero-grid>*{min-width:0}
+.ship,.ship-frame,.ticker{min-width:0}
+.ticker{width:0}
+.ship-photo{display:block;width:170px;aspect-ratio:1;object-fit:cover;border-radius:50%;margin:18px auto 6px;box-shadow:0 0 0 2px var(--cy),0 0 30px rgba(95,208,255,.5)}
+.ship-photo+.reticle{display:none}
+.stage-photo{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:20px;border:1px solid var(--line)}
+.ship{position:relative;justify-self:end;width:100%;max-width:440px;filter:drop-shadow(0 0 40px rgba(61,130,255,.35))}
+.ship-frame{position:relative;padding:16px 20px 14px;color:var(--ice);
+  clip-path:polygon(0 18px,18px 0,calc(100% - 64px) 0,calc(100% - 52px) 10px,100% 10px,100% calc(100% - 18px),calc(100% - 18px) 100%,64px 100%,52px calc(100% - 10px),0 calc(100% - 10px));
+  background:
+    repeating-linear-gradient(0deg,rgba(95,208,255,.05) 0 1px,transparent 1px 3px),
+    radial-gradient(300px 220px at 50% 28%,rgba(95,208,255,.18),transparent 70%),
+    linear-gradient(170deg,rgba(18,44,86,.95),rgba(4,10,22,.96));
+  box-shadow:inset 0 0 0 1px rgba(95,208,255,.45)}
+.ship-frame::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,transparent,rgba(95,208,255,.12) 50%,transparent);height:30%;animation:shipScan 4.5s linear infinite}
+@keyframes shipScan{from{transform:translateY(-100%)}to{transform:translateY(420%)}}
+.cnr{position:absolute;width:26px;height:26px;border:2px solid var(--cy);pointer-events:none;filter:drop-shadow(0 0 6px var(--cy))}
+.cnr.a{top:-6px;left:-6px;border-right:0;border-bottom:0}.cnr.b{top:-6px;right:-6px;border-left:0;border-bottom:0}
+.cnr.c{bottom:-6px;left:-6px;border-right:0;border-top:0}.cnr.d{bottom:-6px;right:-6px;border-left:0;border-top:0}
+.ship-top{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--t3)}
+.ship-top .tag-r{margin-left:auto;color:var(--cy)}
+.blink{animation:blink 1.2s steps(2) infinite;font-weight:400}@keyframes blink{50%{opacity:.2}}
+.segs{display:flex;gap:3px}.segs i{width:7px;height:9px;background:var(--cy);opacity:.85;transform:skewX(-20deg)}.segs i.dim{opacity:.18}
+.ship .portrait.loaded{aspect-ratio:1;border-radius:50%;width:170px;margin:18px auto 0;box-shadow:0 0 0 2px var(--cy),0 0 30px rgba(95,208,255,.5)}
+.ship:has(.portrait.loaded) .reticle{display:none}
+.reticle{position:relative;width:190px;aspect-ratio:1;margin:16px auto 6px;color:var(--cy)}
+.reticle .ring{position:absolute;inset:0;width:100%;height:100%}
+.r1{animation:spin 30s linear infinite}.r2{animation:spin 14s linear infinite reverse;opacity:.8}.r3{opacity:.7}
+@keyframes spin{to{transform:rotate(360deg)}}
+.reticle .rw{position:absolute;inset:24%;width:52%;height:auto;color:#d9ecff;filter:drop-shadow(0 0 8px rgba(95,208,255,.8))}
+
+.reticle .sweep{position:absolute;inset:8%;border-radius:50%;background:conic-gradient(from 0deg,rgba(95,208,255,.35),transparent 25%);animation:spin 3.5s linear infinite;mask:radial-gradient(circle,transparent 55%,#000 56%)}
+.ship-name{text-align:center;margin:4px 0 12px}
+.ship-name .n{font-family:var(--disp);font-weight:800;font-size:26px;letter-spacing:.08em;text-shadow:0 0 18px rgba(95,208,255,.6)}
+.ship-name .p{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--t2);margin-top:2px}
+.ship-name .p b{color:var(--cy);font-weight:500}
+.ship-rows{display:grid;gap:0;border-top:1px solid rgba(95,208,255,.25)}
+.ship-rows .row{display:grid;grid-template-columns:92px 1fr;gap:10px;padding:9px 0;border-bottom:1px dashed rgba(95,208,255,.18);align-items:baseline}
+.ship-rows span{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--cy)}
+.ship-rows b{font-weight:500;font-size:14px;line-height:1.4;color:var(--ice)}
+.ship-meters{display:grid;gap:7px;margin:12px 0 10px}
+.ship-meters div{display:grid;grid-template-columns:92px 1fr;gap:10px;align-items:center}
+.ship-meters span{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--t3)}
+.ship-meters i{height:6px;position:relative;background:repeating-linear-gradient(90deg,rgba(95,208,255,.15) 0 6px,transparent 6px 8px)}
+.ship-meters i::after{content:"";position:absolute;inset:0 auto 0 0;width:0;background:repeating-linear-gradient(90deg,var(--cy) 0 6px,transparent 6px 8px);box-shadow:0 0 10px rgba(95,208,255,.6);transition:width 1.6s cubic-bezier(.2,.7,.2,1) 1.6s}
+body:not(.intro) .ship-meters i::after{width:var(--v)}
+.ship-foot{display:flex;gap:10px;align-items:center;font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--t3);border-top:1px solid rgba(95,208,255,.25);padding-top:9px;overflow:hidden}
+.ship-foot>span:first-child{color:var(--cy)}
+.ticker{overflow:hidden;white-space:nowrap;flex:1;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.ticker span{display:inline-block;animation:tick 14s linear infinite}
+@keyframes tick{to{transform:translateX(-50%)}}
+@media (max-width:1060px){.ship{justify-self:start;max-width:520px;margin-top:40px}}
+@media (max-width:720px){.ship-frame{padding:14px 16px 12px}.reticle{width:160px}.ship-rows .row,.ship-meters div{grid-template-columns:84px 1fr}}
+@media (prefers-reduced-motion:reduce){.r1,.r2,.reticle .sweep,.ship-frame::before,.ticker span,.blink{animation:none}.ship-meters i::after{width:var(--v);transition:none}}
+
+/* ================= MERGE SET-PIECE ================= */
+.merge{position:relative;margin-top:56px;padding:34px 40px 46px;color:var(--ice);overflow:hidden;
+  clip-path:polygon(0 22px,22px 0,calc(100% - 22px) 0,100% 22px,100% calc(100% - 22px),calc(100% - 22px) 100%,22px 100%,0 calc(100% - 22px));
+  background:repeating-linear-gradient(0deg,rgba(95,208,255,.04) 0 1px,transparent 1px 3px),
+    radial-gradient(600px 300px at 50% 40%,rgba(61,130,255,.35),transparent 70%),linear-gradient(170deg,#0b1c3a,#030915);
+  box-shadow:inset 0 0 0 1px rgba(95,208,255,.4)}
+.mg-hud{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--t3)}
+.mg-st{color:var(--t3);transition:color .3s}
+.merge.go .mg-st{color:var(--cy)}
+.mg-stage{position:relative;height:190px;margin:18px auto 8px;max-width:760px}
+.mg-stage::before{content:"";position:absolute;left:6%;right:6%;top:50%;height:1px;background:linear-gradient(90deg,transparent,rgba(95,208,255,.5),transparent)}
+.mg-node{position:absolute;top:50%;white-space:nowrap;display:grid;justify-items:center;gap:10px;transform:translate(-50%,-30%);transition:left 1.1s cubic-bezier(.7,0,.2,1) .9s,opacity .5s ease 1.9s,transform 1.1s cubic-bezier(.7,0,.2,1) .9s}
+.mg-node i{width:58px;height:58px;border:1.5px solid var(--cy);transform:rotate(45deg);background:rgba(95,208,255,.08);box-shadow:0 0 22px rgba(95,208,255,.35),inset 0 0 14px rgba(95,208,255,.25)}
+.mg-node span{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--b4)}
+.n1{left:10%}.n2{left:36.6%}.n3{left:63.3%}.n4{left:90%}
+.merge.go .mg-node{left:50%;opacity:0;transform:translate(-50%,-30%) scale(.6)}
+.mg-core{position:absolute;left:50%;top:50%;width:120px;height:120px;transform:translate(-50%,-50%) scale(.2);opacity:0;display:grid;place-items:center;color:#fff;
+  transition:transform .7s cubic-bezier(.2,1.4,.3,1) 2.05s,opacity .3s ease 2s}
+.mg-core svg{width:62%;height:auto;filter:drop-shadow(0 0 12px var(--cy)) drop-shadow(0 0 30px rgba(61,130,255,.9))}
+.mg-core .ring{position:absolute;inset:0;border-radius:50%;border:2px solid var(--cy);box-shadow:0 0 30px rgba(95,208,255,.6),inset 0 0 30px rgba(95,208,255,.3)}
+.mg-core .r2{inset:-18px;border:1px dashed rgba(95,208,255,.6);animation:spin 12s linear infinite}
+.merge.go .mg-core{transform:translate(-50%,-50%) scale(1);opacity:1}
+.mg-flash{position:absolute;left:50%;top:50%;width:10px;height:10px;border-radius:50%;transform:translate(-50%,-50%);background:#fff;opacity:0;pointer-events:none}
+.merge.go .mg-flash{animation:mgFlash 1s ease-out 2s forwards}
+@keyframes mgFlash{0%{opacity:1;box-shadow:0 0 0 0 rgba(95,208,255,.9),0 0 60px 20px #fff}100%{opacity:0;box-shadow:0 0 0 260px rgba(95,208,255,0),0 0 0 0 #fff}}
+.mg-a{text-align:center;font-size:clamp(18px,2vw,23px);color:var(--t2);margin-top:6px;opacity:0;transform:translateY(10px);transition:.7s ease .2s}
+.mg-a b{color:var(--ice);font-weight:600}
+.mg-b{position:relative;text-align:center;font-family:var(--disp);font-weight:800;font-size:clamp(38px,6vw,78px);line-height:1;letter-spacing:-.045em;margin-top:14px;
+  background:linear-gradient(90deg,#fff,var(--cy) 50%,#fff);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 24px rgba(95,208,255,.55));
+  clip-path:inset(0 100% 0 0);transition:clip-path 1s cubic-bezier(.77,0,.18,1) 2.6s}
+.merge.go .mg-a{opacity:1;transform:none}
+.merge.go .mg-b{clip-path:inset(0 -5% 0 0)}
+.merge::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:linear-gradient(90deg,transparent,var(--cy),transparent);opacity:.7}
+@media (max-width:720px){.mg-hud{font-size:9.5px;letter-spacing:.1em;gap:10px}.mg-hud span{white-space:nowrap}.mg-hud span:first-child{overflow:hidden;text-overflow:ellipsis}.merge{padding:24px 18px 32px}.mg-stage{height:150px}.mg-node i{width:36px;height:36px}.mg-node span{font-size:9px;letter-spacing:.1em}.mg-core{width:90px;height:90px}}
+@media (prefers-reduced-motion:reduce){.mg-node{display:none}.mg-core{opacity:1;transform:translate(-50%,-50%)}.mg-a{opacity:1;transform:none}.mg-b{clip-path:none}}
+/* ================= CINEMATIC LAYER ================= */
+#fx{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.9}
+main,footer{position:relative;z-index:1}
+.grain{position:fixed;inset:-50%;z-index:60;pointer-events:none;opacity:.05;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");animation:grain 1s steps(5) infinite}
+@keyframes grain{20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-4%)}60%{transform:translate(-2%,3%)}80%{transform:translate(4%,1%)}}
+
+/* letterbox intro */
+.letterbox i{position:fixed;left:0;right:0;height:13vh;background:#000;z-index:100;transition:transform 1.1s cubic-bezier(.77,0,.18,1) .9s}
+.lb-t{top:0}.lb-b{bottom:0}
+body:not(.intro) .lb-t{transform:translateY(-101%)}
+body:not(.intro) .lb-b{transform:translateY(101%)}
+
+/* anamorphic flare */
+.hero .flare{position:absolute;z-index:-1;left:-20%;right:-20%;top:34%;height:2px;pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(95,208,255,.0) 10%,rgba(95,208,255,.9) 48%,#fff 50%,rgba(95,208,255,.9) 52%,transparent 90%);
+  box-shadow:0 0 30px 6px rgba(95,208,255,.45),0 0 120px 20px rgba(61,130,255,.25);filter:blur(.4px);opacity:.0;transform:scaleX(.2);
+  animation:flare 2.2s cubic-bezier(.2,.7,.2,1) 1.1s forwards,flareDrift 9s ease-in-out 3.3s infinite alternate}
+.hero .flare::after{content:"";position:absolute;left:47%;top:-60px;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.55),rgba(95,208,255,.15) 40%,transparent 70%)}
+@keyframes flare{0%{opacity:0;transform:scaleX(.1)}30%{opacity:1;transform:scaleX(1.15)}100%{opacity:.55;transform:scaleX(1)}}
+@keyframes flareDrift{to{transform:translateX(8%) scaleX(1.05);opacity:.4}}
+.hero .beam{position:absolute;z-index:-1;top:-30%;bottom:-10%;width:38%;left:55%;pointer-events:none;
+  background:linear-gradient(100deg,transparent 30%,rgba(124,175,255,.10) 50%,transparent 70%);transform:skewX(-18deg);animation:beam 7s ease-in-out infinite alternate}
+@keyframes beam{from{left:40%}to{left:70%}}
+
+/* name light sweep */
+h1 .nm{position:relative;display:inline-block}
+h1 .nm::after{content:attr(data-text);position:absolute;inset:0;color:transparent;
+  background:linear-gradient(100deg,transparent 35%,rgba(255,255,255,.95) 48%,rgba(95,208,255,.9) 52%,transparent 65%);background-size:250% 100%;background-position:150% 0;
+  -webkit-background-clip:text;background-clip:text;animation:sweepTxt 1.6s cubic-bezier(.4,0,.2,1) 1.6s forwards,sweepTxt 1.6s cubic-bezier(.4,0,.2,1) 9s infinite}
+@keyframes sweepTxt{to{background-position:-50% 0}}
+
+/* heading wipe reveals */
+h2.rv{clip-path:inset(0 100% 0 0);opacity:1;transform:none;transition:clip-path 1s cubic-bezier(.77,0,.18,1)}
+h2.rv.in{clip-path:inset(0 -2% 0 0)}
+.label.rv{opacity:0;transform:translateX(-20px)}
+.label.rv.in{opacity:1;transform:none}
+
+/* outline wolves draw themselves */
+svg.draw path{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2.6s cubic-bezier(.5,0,.2,1)}
+svg.draw path[fill="currentColor"]{fill-opacity:0;transition:stroke-dashoffset 2.6s cubic-bezier(.5,0,.2,1),fill-opacity .8s ease 2s}
+svg.draw.on path{stroke-dashoffset:0}
+svg.draw.on path[fill="currentColor"]{fill-opacity:1}
+.hero .wm{transition:transform .25s ease-out}
+
+/* card tilt + glare */
+.tilt{transform-style:preserve-3d;will-change:transform}
+.tilt .glare{position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;
+  background:radial-gradient(400px circle at var(--gx,50%) var(--gy,50%),rgba(124,175,255,.18),transparent 45%);z-index:2}
+.tilt:hover .glare{opacity:1}
+
+/* section entry flash line */
+section{position:relative}
+.sec-flash{position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,var(--cy),transparent);opacity:0;transform:scaleX(0);pointer-events:none}
+.sec-flash.on{animation:secFlash 1.4s ease-out forwards}
+@keyframes secFlash{0%{opacity:0;transform:scaleX(0)}30%{opacity:1}100%{opacity:.25;transform:scaleX(1)}}
+
+/* hero stagger after letterbox */
+body.intro .hero .rv{opacity:0!important;transform:translateY(24px)!important}
+
+@media (prefers-reduced-motion:reduce){
+  .letterbox,.grain,#fx,.hero .flare,.hero .beam{display:none}
+  h1 .nm::after{display:none}
+  h2.rv{clip-path:none}
+  svg.draw path{stroke-dasharray:none;stroke-dashoffset:0}
+  svg.draw path[fill="currentColor"]{fill-opacity:1}
+}
+</style>
+</head>
+<body class="intro">
+<div class="letterbox" aria-hidden="true"><i class="lb-t"></i><i class="lb-b"></i></div>
+<canvas id="fx" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+
+<header>
+  <div class="wrap">
+    <a href="#top" class="mk" aria-label="Raae Wolfram, home">
+      <span class="mono wolfmark" aria-hidden="true"><svg viewBox="0 0 500 520" fill="none" stroke="currentColor" stroke-width="26" stroke-linejoin="round" stroke-linecap="round"><path d="M250 150 L200 140 L118 18 L98 172 L38 160 L74 214 L12 242 L70 272 L24 326 L92 322 L64 392 L142 372 L150 436 L206 448 L250 505 L294 448 L350 436 L358 372 L436 392 L408 322 L476 326 L430 272 L488 242 L426 214 L462 160 L402 172 L382 18 L300 140 L250 150 Z"/><path d="M130 62 L172 150"/><path d="M370 62 L328 150"/><path d="M104 212 L214 248 L250 226"/><path d="M396 212 L286 248 L250 226"/><path d="M214 248 L222 402"/><path d="M286 248 L278 402"/><path d="M140 240 L214 262 L170 272 Z" fill="currentColor"/><path d="M360 240 L286 262 L330 272 Z" fill="currentColor"/><path d="M226 392 L274 392 L250 420 Z" fill="currentColor"/><path d="M214 418 L224 456 L232 424 Z" fill="currentColor"/><path d="M286 418 L276 456 L268 424 Z" fill="currentColor"/></svg></span>
+      <span class="mk-t"><b>Raae Wolfram</b><small>SECURITY · GTM · AI</small></span>
+    </a>
+    <nav id="nav" aria-label="Sections">
+      <a href="#what"><i>01</i>What I do</a>
+      <a href="#results"><i>02</i>Outcomes</a>
+      <a href="#projects"><i>03</i>Projects</a>
+      <a href="#working"><i>04</i>Working with me</a>
+      <a href="#experience"><i>05</i>Experience</a>
+    </nav>
+    <div class="hud-meta" aria-hidden="true"><span class="pulse"></span>NYC <b id="clock">--:--</b></div>
+    <a class="hbtn" href="#contact"><span>Contact</span></a>
+    <button class="menu" id="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+  </div>
+  <span class="hud-prog" id="prog"></span>
+</header>
+
+<main id="top">
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="flare" aria-hidden="true"></div><div class="beam" aria-hidden="true"></div>
+  <div class="wm" aria-hidden="true"><svg class="draw" viewBox="0 0 500 520" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="round"><path d="M250 150 L200 140 L118 18 L98 172 L38 160 L74 214 L12 242 L70 272 L24 326 L92 322 L64 392 L142 372 L150 436 L206 448 L250 505 L294 448 L350 436 L358 372 L436 392 L408 322 L476 326 L430 272 L488 242 L426 214 L462 160 L402 172 L382 18 L300 140 L250 150 Z"/><path d="M130 62 L172 150"/><path d="M370 62 L328 150"/><path d="M200 140 L214 248"/><path d="M300 140 L286 248"/><path d="M250 150 L250 226"/><path d="M250 150 L250 226"/><path d="M104 212 L214 248 L250 226"/><path d="M396 212 L286 248 L250 226"/><path d="M98 172 L140 238"/><path d="M402 172 L360 238"/><path d="M70 272 L168 272"/><path d="M430 272 L332 272"/><path d="M92 322 L220 334"/><path d="M408 322 L280 334"/><path d="M142 372 L222 402"/><path d="M358 372 L278 402"/><path d="M214 248 L222 402"/><path d="M286 248 L278 402"/><path d="M222 402 L206 448"/><path d="M278 402 L294 448"/><path d="M140 240 L214 262 L170 272 Z" fill="currentColor"/><path d="M360 240 L286 262 L330 272 Z" fill="currentColor"/><path d="M226 392 L274 392 L250 420 Z" fill="currentColor"/><path d="M214 418 L224 456 L232 424 Z" fill="currentColor"/><path d="M286 418 L276 456 L268 424 Z" fill="currentColor"/></svg></div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="kick rv"><span class="live">Microsoft</span><span>Security strategy</span><span>Go-to-market</span><span>AI agents</span></div>
+        <h1 class="rv"><span class="nm" data-text="Raae Wolfram">Raae Wolfram</span><span class="say">Raae is pronounced <b>“Ray”</b></span><span class="tag">Security strategy, go-to-market, and AI leader. My programs have generated 1,200+ qualified leads, raised competitive win rates 40%, and cut sales cycles 30%.</span></h1>
+        <p class="intro rv">I advise Fortune 500 security leaders at <b>Microsoft</b>. I build go-to-market programs from scratch that turn into lasting pipeline, and <b>AI agents</b> that triage threats, write intelligence briefs, build executive-ready visuals, and evaluate other AI systems.</p>
+        <div class="acts rv">
+          <a class="btn a" href="#results">See outcomes</a>
+          <a class="btn b" href="https://www.linkedin.com/in/raaewolfram/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+      </div>
+      <aside class="ship rv" aria-label="Profile summary">
+        <div class="ship-frame">
+          <div class="ship-top">
+            <span class="tag-l">ID // RW-01</span>
+            <span class="segs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="dim"></i><i class="dim"></i></span>
+            <span class="tag-r"><b class="blink">●</b> LINK SECURE</span>
+          </div>
+          <div class="reticle" aria-hidden="true">
+            <svg class="ring r1" viewBox="0 0 200 200"><circle cx="100" cy="100" r="92" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="3 7"/></svg>
+            <svg class="ring r2" viewBox="0 0 200 200"><circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="70 30 12 30 40 60"/></svg>
+            <svg class="ring r3" viewBox="0 0 200 200"><path d="M100 4v14M100 182v14M4 100h14M182 100h14" stroke="currentColor" stroke-width="2"/><circle cx="100" cy="100" r="66" fill="none" stroke="currentColor" stroke-opacity=".35"/></svg>
+            <svg class="rw" viewBox="0 0 500 520" fill="none" stroke="currentColor" stroke-width="12" stroke-linejoin="miter" stroke-linecap="round"><path d="M250 150 L200 140 L118 18 L98 172 L38 160 L74 214 L12 242 L70 272 L24 326 L92 322 L64 392 L142 372 L150 436 L206 448 L250 505 L294 448 L350 436 L358 372 L436 392 L408 322 L476 326 L430 272 L488 242 L426 214 L462 160 L402 172 L382 18 L300 140 L250 150 Z"/><path d="M130 62 L172 150"/><path d="M370 62 L328 150"/><path d="M200 140 L214 248"/><path d="M300 140 L286 248"/><path d="M250 150 L250 226"/><path d="M250 150 L250 226"/><path d="M104 212 L214 248 L250 226"/><path d="M396 212 L286 248 L250 226"/><path d="M98 172 L140 238"/><path d="M402 172 L360 238"/><path d="M70 272 L168 272"/><path d="M430 272 L332 272"/><path d="M92 322 L220 334"/><path d="M408 322 L280 334"/><path d="M142 372 L222 402"/><path d="M358 372 L278 402"/><path d="M214 248 L222 402"/><path d="M286 248 L278 402"/><path d="M222 402 L206 448"/><path d="M278 402 L294 448"/><path d="M140 240 L214 262 L170 272 Z" fill="currentColor"/><path d="M360 240 L286 262 L330 272 Z" fill="currentColor"/><path d="M226 392 L274 392 L250 420 Z" fill="currentColor"/><path d="M214 418 L224 456 L232 424 Z" fill="currentColor"/><path d="M286 418 L276 456 L268 424 Z" fill="currentColor"/></svg>
+            <span class="sweep"></span>
+          </div>
+          <div class="ship-name">
+            <div class="n">RAAE WOLFRAM</div>
+            <div class="p">PRONOUNCED <b>“RAY”</b></div>
+          </div>
+          <div class="ship-rows">
+            <div class="row"><span>STATION</span><b>Microsoft · Senior Security Strategy Operations Lead, GTM &amp; Growth</b></div>
+            <div class="row"><span>PAYLOAD</span><b>GTM programs · Partner programs · Agentic AI</b></div>
+            <div class="row"><span>CLEARANCE</span><b>MBA · MS Cyber · MPH · PMP</b></div>
+            <div class="row"><span>SECTOR</span><b>New York</b></div>
+          </div>
+          <div class="ship-foot"><span>SYS.OK</span><span class="ticker"><span>BUILDING 0→1 · RUNNING AT SCALE · AGENTIC AI ONLINE · BUILDING 0→1 · RUNNING AT SCALE · AGENTIC AI ONLINE ·</span></span></div>
+        </div>
+        <span class="cnr a"></span><span class="cnr b"></span><span class="cnr c"></span><span class="cnr d"></span>
+      </aside>
+    </div>
+
+    <div class="stats">
+      <div class="stat rv"><span class="cn tl"></span><span class="cn tr"></span><span class="cn bl"></span><span class="cn br"></span>
+        <div class="st-top"><span class="i">01 · PRESALES</span><span class="org">MICROSOFT</span></div>
+        <div class="v" data-to="11.6" data-dec="1" data-pre="$" data-suf="M">$11.6M</div>
+        <div class="l">recurring security baseline I influenced as a presales security solutions engineer</div>
+      </div>
+      <div class="stat rv"><span class="cn tl"></span><span class="cn tr"></span><span class="cn bl"></span><span class="cn br"></span>
+        <div class="st-top"><span class="i">02 · PRODUCT</span><span class="org">WEBMD</span></div>
+        <div class="v" data-to="40" data-dec="0" data-pre="$" data-suf="M+">$40M+</div>
+        <div class="l">annual revenue potential on a flagship product I delivered</div>
+      </div>
+      <div class="stat rv"><span class="cn tl"></span><span class="cn tr"></span><span class="cn bl"></span><span class="cn br"></span>
+        <div class="st-top"><span class="i">03 · INTEL</span><span class="org">MICROSOFT</span></div>
+        <div class="v" data-to="320" data-dec="0" data-pre="" data-suf="+">320+</div>
+        <div class="l">indicators of compromise published for defenders</div>
+      </div>
+      <div class="stat rv"><span class="cn tl"></span><span class="cn tr"></span><span class="cn bl"></span><span class="cn br"></span>
+        <div class="st-top"><span class="i">04 · SCALE</span><span class="org">AWS</span></div>
+        <div class="v" data-to="500" data-dec="0" data-pre="$" data-suf="M+">$500M+</div>
+        <div class="l">in revenue running on billing systems I rebuilt</div>
+      </div>
+    </div>
+
+    <div class="cos rv"><div class="cg now"><small>NOW</small><span>Microsoft</span></div><div class="cg"><small>BEFORE</small><span>AWS</span><span>Memorial Sloan Kettering</span><span>WebMD</span><span>NYU Langone</span></div></div>
+  </div>
+</section>
+
+<!-- ================= WHAT I DO ================= -->
+<section id="what">
+  <div class="wrap">
+    <div class="label rv"><i>01</i>What I do</div>
+    <h2 class="rv">What companies hire me to do</h2>
+    <div class="pillars">
+      <div class="pillar rv">
+        <div class="no">01</div>
+        <h3>Launch new programs</h3>
+        <p>I take an idea with executive interest and no owner, and do the whole thing: concept, name, brand, packaging, launch, and running it. Example: two webinar series that now feed the sales pipeline.</p>
+        <div class="proof"><b>1,200+</b><span>qualified leads in the first 6 months</span></div>
+      </div>
+      <div class="pillar rv">
+        <div class="no">02</div>
+        <h3>Win customers alongside partners</h3>
+        <p>I give sellers and partners the messaging, proof points, and plays to beat CrowdStrike, Palo Alto Networks, and SentinelOne, and I advise Fortune 500 security leaders directly.</p>
+        <div class="proof"><b>+40%</b><span>win rate in head-to-head evaluations</span></div>
+      </div>
+      <div class="pillar rv">
+        <div class="no">03</div>
+        <h3>Build AI agents</h3>
+        <p>I design and build AI agents that triage threats, write intelligence briefs, turn incident details into executive-ready visuals, and score other AI systems, at Microsoft and in <a href="#projects" style="color:var(--cy)">my own projects</a>.</p>
+        <div class="proof"><b>Adopted</b><span>by a dedicated threat intelligence team at Microsoft</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OUTCOMES ================= -->
+<section id="results" style="padding-top:16px">
+  <div class="wrap">
+    <div class="label rv"><i>02</i>Outcomes</div>
+    <h2 class="rv">The results</h2>
+    <div class="results">
+      <article class="res rv">
+        <div class="res-top"><div><div class="co">MICROSOFT</div><h3>A webinar program that sells</h3></div><div class="big"><b>1,200+</b><span>qualified leads in 6 months</span></div></div>
+        <ol class="steps">
+          <li><em>PROBLEM</em>Customers assumed managed security was mostly automation. They didn't see the threat hunters behind it.</li>
+          <li><em>WHAT I DID</em>Created two webinar series that put our threat researchers live in front of customers, and built the go-to-market behind them. Sessions earned professional education credits, which security pros need to keep their certifications.</li>
+          <li><em>RESULT</em>1,200+ qualified leads, new customers, and a program the company still runs.</li>
+        </ol>
+      </article>
+      <article class="res rv">
+        <div class="res-top"><div><div class="co">MICROSOFT</div><h3>Winning against the biggest competitors</h3></div><div class="big"><b>+40%</b><span>competitive win rate</span></div></div>
+        <ol class="steps">
+          <li><em>PROBLEM</em>Sellers were losing head-to-head evaluations, and deals were taking too long.</li>
+          <li><em>WHAT I DID</em>Wrote one set of messaging for product and sales, and built playbooks against CrowdStrike, Palo Alto Networks, and SentinelOne.</li>
+          <li><em>RESULT</em>40% more competitive wins and sales cycles 30% shorter.</li>
+        </ol>
+      </article>
+      <article class="res rv">
+        <div class="res-top"><div><div class="co">MICROSOFT · PARTNERS</div><h3>Joint go-to-market with partners</h3></div><div class="big"><b>Joint GTM</b><span>webinars, screencasts, enablement</span></div></div>
+        <ol class="steps">
+          <li><em>PROBLEM</em>Managed security partners sold alongside Microsoft without shared messaging or joint programs.</li>
+          <li><em>WHAT I DID</em>Built joint messaging and enablement with MDR partners, and brought partners into the webinar program, including a "Better Together" series with Quorum Cyber.</li>
+          <li><em>RESULT</em>Partners and Microsoft sellers using the same story in front of customers.</li>
+        </ol>
+      </article>
+      <article class="res rv">
+        <div class="res-top"><div><div class="co">MICROSOFT DEFENDER EXPERTS</div><h3>Incubating a threat intelligence service</h3></div><div class="big"><b>320+</b><span>indicators of compromise published</span></div></div>
+        <ol class="steps">
+          <li><em>PROBLEM</em>Our threat findings weren't reaching customers or other security companies in a form they could use.</li>
+          <li><em>WHAT I DID</em>Built the intelligence newsletter and the process behind it, and coordinated with researchers and outside companies on each finding.</li>
+          <li><em>RESULT</em>320+ public indicators of compromise and new detections built with Huntress.</li>
+        </ol>
+      </article>
+      <article class="res rv wide">
+        <div class="res-top"><div><div class="co">MICROSOFT</div><h3>AI agents for threat intelligence</h3></div><div class="big"><b>256 → 10</b><span>items collected vs. flagged for analysts in one daily run</span></div></div>
+        <ol class="steps">
+          <li><em>PROBLEM</em>Analysts spent hours reading reports before analysis could start.</li>
+          <li><em>WHAT I DID</em>Built AI agents that collect, sort, prioritize, and summarize threats every day, and check each claim against its source.</li>
+          <li><em>RESULT</em>Hundreds of daily items narrowed to a short list for analysts. The work was taken on by a dedicated threat intelligence team.</li>
+        </ol>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= PERSONAL PROJECTS ================= -->
+<section id="projects" style="padding-top:16px">
+  <div class="wrap">
+    <div class="label rv"><i>03</i>Personal projects</div>
+    <h2 class="rv">Independent builds</h2>
+    <p class="lede rv">AI agents, intelligence tools, and apps I design, build, and ship on my own.</p>
+    <div class="pj-grid">
+      <article class="pj feat rv">
+        <div class="pj-h"><span class="st live">LIVE</span><span class="tp">Threat intelligence feed</span></div>
+        <h3>PHANTOMSignal</h3>
+        <p>A public threat intelligence feed. Python on GitHub Actions pulls 80+ security sources every hour and scores stories across several time windows, so ongoing campaigns stand out from one-day news. It publishes a live web feed, an analyst briefing file, and RSS.</p>
+        <div class="pj-meta"><span>Python</span><span>GitHub Actions</span><span>80+ sources</span><span>Hourly</span></div>
+        <a class="btn a" href="https://chaoswrangler.github.io/phantomsignal/" target="_blank" rel="noopener">View the live feed ↗</a>
+      </article>
+      <article class="pj rv">
+        <div class="pj-h"><span class="st">BUILT</span><span class="tp">AI console</span></div>
+        <h3>CyberSage</h3>
+        <p>An intelligence console built in React on the Anthropic API, with five operating modes and a classifier that keeps requests on task.</p>
+        <div class="pj-meta"><span>React</span><span>Anthropic API</span></div>
+      </article>
+      <article class="pj rv">
+        <div class="pj-h"><span class="st live">PUBLIC</span><span class="tp">Strategy simulator</span></div>
+        <h3>HAGEN</h3>
+        <p>A Claude-powered strategy simulator. You bring a decision, and a calm, unsentimental advisor walks you through leverage, options, and consequences.</p>
+        <div class="pj-meta"><span>Claude</span><span>Prompt design</span></div>
+      </article>
+      <article class="pj rv">
+        <div class="pj-h"><span class="st live">PUBLIC</span><span class="tp">GPT agent</span></div>
+        <h3>FAFOSec</h3>
+        <p>Failure Assumption Forecasting Operator. Give it a plan, and it finds the assumptions the plan depends on and shows how each one could fail.</p>
+        <div class="pj-meta"><span>GPT agent</span><span>Risk analysis</span></div>
+      </article>
+      <article class="pj rv">
+        <div class="pj-h"><span class="st">BUILT</span><span class="tp">Writing agent</span></div>
+        <h3>GHOSTWRITE</h3>
+        <p>A cybersecurity writing agent fed by its own news pipeline on GitHub Actions, so every draft starts from the week's actual security news.</p>
+        <div class="pj-meta"><span>AI agent</span><span>GitHub Actions</span></div>
+      </article>
+      <article class="pj rv">
+        <div class="pj-h"><span class="st live">PRESENTED</span><span class="tp">AI threat demo</span></div>
+        <h3>Slippy</h3>
+        <p>A deliberately over-helpful AI assistant that walks an attacker through a breach, step by step. I built it to show how workplace AI can be turned against the company using it, and presented it at Experts Live US as "Clippy's in the Kill Chain."</p>
+        <div class="pj-meta"><span>AI security</span><span>Live demo</span><span>Experts Live US</span></div>
+      </article>
+      <article class="pj rv">
+        <div class="pj-h"><span class="st dev">IN DEVELOPMENT</span><span class="tp">App</span></div>
+        <h3>Rapport Card</h3>
+        <p>A people-research app that helps you prepare to meet someone: who they are, what they care about, and where you have common ground. Headed for public release.</p>
+        <div class="pj-meta"><span>AI research</span><span>Public release planned</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WORKING WITH ME ================= -->
+<section id="working" class="light">
+  <div class="wm2" aria-hidden="true"><svg class="draw" viewBox="0 0 500 520" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="round"><path d="M250 150 L200 140 L118 18 L98 172 L38 160 L74 214 L12 242 L70 272 L24 326 L92 322 L64 392 L142 372 L150 436 L206 448 L250 505 L294 448 L350 436 L358 372 L436 392 L408 322 L476 326 L430 272 L488 242 L426 214 L462 160 L402 172 L382 18 L300 140 L250 150 Z"/><path d="M130 62 L172 150"/><path d="M370 62 L328 150"/><path d="M200 140 L214 248"/><path d="M300 140 L286 248"/><path d="M250 150 L250 226"/><path d="M250 150 L250 226"/><path d="M104 212 L214 248 L250 226"/><path d="M396 212 L286 248 L250 226"/><path d="M98 172 L140 238"/><path d="M402 172 L360 238"/><path d="M70 272 L168 272"/><path d="M430 272 L332 272"/><path d="M92 322 L220 334"/><path d="M408 322 L280 334"/><path d="M142 372 L222 402"/><path d="M358 372 L278 402"/><path d="M214 248 L222 402"/><path d="M286 248 L278 402"/><path d="M222 402 L206 448"/><path d="M278 402 L294 448"/><path d="M140 240 L214 262 L170 272 Z" fill="currentColor"/><path d="M360 240 L286 262 L330 272 Z" fill="currentColor"/><path d="M226 392 L274 392 L250 420 Z" fill="currentColor"/><path d="M214 418 L224 456 L232 424 Z" fill="currentColor"/><path d="M286 418 L276 456 L268 424 Z" fill="currentColor"/></svg></div>
+  <div class="wrap ww">
+    <div>
+      <div class="label rv"><i>04</i>Working with me</div>
+      <h2 class="rv">How I operate</h2>
+      <div class="voice rv">
+        <p>I'm a strategist who builds and a builder who sells. That means one person can take an idea from a blank page to a working system to customer pipeline, without losing anything in translation.</p>
+      </div>
+      <div class="brain">
+        <div class="bc rv"><span>01</span><h3>I see the whole system</h3><p>My master's in public health is in epidemiology. I look at security problems the way I'd look at an outbreak: where it starts, how it spreads, and which single move changes the curve.</p></div>
+        <div class="bc rv"><span>02</span><h3>I think from the other side of the table</h3><p>Before I build anything, I work out how the attacker, the buyer, and the competitor will see it. Slippy, FAFOSec, and the competitive program all came from that habit.</p></div>
+        <div class="bc rv"><span>03</span><h3>I design and build the AI myself</h3><p>I design agentic workflows end to end: what each agent does, where its facts come from, how its work gets checked, and how people actually use it. Then I explain it to a CISO the same afternoon.</p></div>
+        <div class="bc rv"><span>04</span><h3>I make ideas people remember</h3><p>S.T.A.R., S.H.I.E.L.D., PHANTOM, and Slippy each had a name, an identity, and a story before they had a launch date. That's why people showed up, and why the programs lasted.</p></div>
+      </div>
+      <div class="merge" id="merge">
+        <div class="mg-hud"><span>FIG.04 // TEAM COMPRESSION</span><span class="mg-st">STANDBY</span></div>
+        <div class="mg-stage" aria-hidden="true">
+          <div class="mg-node n1"><i></i><span>STRATEGY</span></div>
+          <div class="mg-node n2"><i></i><span>BUILD</span></div>
+          <div class="mg-node n3"><i></i><span>LAUNCH</span></div>
+          <div class="mg-node n4"><i></i><span>SCALE</span></div>
+          <div class="mg-core"><span class="ring"></span><span class="ring r2"></span><svg viewBox="0 0 500 520" fill="none" stroke="currentColor" stroke-width="22" stroke-linejoin="round" stroke-linecap="round"><path d="M250 150 L200 140 L118 18 L98 172 L38 160 L74 214 L12 242 L70 272 L24 326 L92 322 L64 392 L142 372 L150 436 L206 448 L250 505 L294 448 L350 436 L358 372 L436 392 L408 322 L476 326 L430 272 L488 242 L426 214 L462 160 L402 172 L382 18 L300 140 L250 150 Z"/><path d="M130 62 L172 150"/><path d="M370 62 L328 150"/><path d="M104 212 L214 248 L250 226"/><path d="M396 212 L286 248 L250 226"/><path d="M214 248 L222 402"/><path d="M286 248 L278 402"/><path d="M140 240 L214 262 L170 272 Z" fill="currentColor"/><path d="M360 240 L286 262 L330 272 Z" fill="currentColor"/><path d="M226 392 L274 392 L250 420 Z" fill="currentColor"/><path d="M214 418 L224 456 L232 424 Z" fill="currentColor"/><path d="M286 418 L276 456 L268 424 Z" fill="currentColor"/></svg></div>
+          <span class="mg-flash"></span>
+        </div>
+        <p class="mg-a">Most companies need <b>four people</b> to take an idea to revenue.</p>
+        <p class="mg-b" data-text="Hire me and you need one.">Hire me and you need one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+<section id="experience" class="dark2">
+  <div class="wrap">
+    <div class="label rv"><i>05</i>Experience</div>
+    <h2 class="rv">Experience</h2>
+    <p class="lede rv">Before Microsoft, I ran systems that people depended on every day: clinical education platforms at NYU Langone, enterprise collaboration and access controls at Memorial Sloan Kettering, and the billing behind $500M+ in AWS revenue.</p>
+    <div class="exp">
+      <div class="tl">
+        <div class="job now rv"><div class="d">Nov 2025 – Present</div><h3>Senior Security Strategy Operations Lead, GTM &amp; Growth</h3><div class="co">Microsoft</div><p>Advise Fortune 500 security leaders and grow adoption across Defender, Sentinel, and Purview.</p></div>
+        <div class="job rv"><div class="d">2022 – 2025</div><h3>Senior Security Product Manager, Pre-Intent Strategy</h3><div class="co">Microsoft</div><p>Shaped how large companies evaluate and buy Microsoft's managed security service. Launched the webinar program, the competitive program, and joint enablement with MDR partners.</p></div>
+        <div class="job rv"><div class="d">2021 – 2022</div><h3>Program Manager, Custom Billing Solutions</h3><div class="co">Amazon Web Services</div><p>Redesigned enterprise billing supporting $500M+ in revenue. Accuracy up 35%, manual work down 40%.</p></div>
+        <div class="job rv"><div class="d">2019 – 2021</div><h3>Digital Workforce Technical Solutions Manager</h3><div class="co">Memorial Sloan Kettering</div><p>Moved the organization to Microsoft Teams and set up access controls for a remote workforce.</p></div>
+        <div class="job rv"><div class="d">2018 – 2019</div><h3>Promotional Products Project Manager</h3><div class="co">WebMD</div><p>Launched a premium client product and delivered a flagship product with $40M+ revenue potential.</p></div>
+        <div class="job rv"><div class="d">2011 – 2018</div><h3>Medical Education Informatics IT Manager</h3><div class="co">NYU Langone Health</div><p>Replaced the learning platform for 15,000+ users and cut admin work by 45%.</p></div>
+      </div>
+      <div class="side">
+        <div class="card rv"><h3>EDUCATION</h3><ul>
+          <li>MBA, Technology &amp; Operations<span>NYU Stern</span></li>
+          <li>MS, Cybersecurity<span>Utica University</span></li>
+          <li>MPH, Epidemiology &amp; Biostatistics<span>Hunter College</span></li>
+          <li>PMP<span>Project Management Institute</span></li>
+        </ul></div>
+        <div class="card rv"><h3>SPEAKING</h3><ul>
+          <li>BSides San Francisco, Tampa, Puerto Rico</li>
+          <li>Experts Live US</li>
+          <li>Host, S.T.A.R. webinar series<span>Microsoft Defender Experts</span></li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact dark2" id="contact" style="margin-top:0;border-radius:0">
+  <div class="wrap">
+    <div class="cbox rv">
+      <div>
+        <div class="label"><i>06</i>Contact</div>
+        <h2>Let's talk.</h2>
+        <p class="lede">Email is the fastest way to reach me.</p>
+        <div class="acts">
+          <a class="btn a" href="mailto:digitalraaewolfram@gmail.com">Email me</a>
+          <a class="btn b" href="https://www.linkedin.com/in/raaewolfram/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+      </div>
+      <div class="cwolf" aria-hidden="true"><svg class="draw" viewBox="0 0 500 520" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="round"><path d="M250 150 L200 140 L118 18 L98 172 L38 160 L74 214 L12 242 L70 272 L24 326 L92 322 L64 392 L142 372 L150 436 L206 448 L250 505 L294 448 L350 436 L358 372 L436 392 L408 322 L476 326 L430 272 L488 242 L426 214 L462 160 L402 172 L382 18 L300 140 L250 150 Z"/><path d="M130 62 L172 150"/><path d="M370 62 L328 150"/><path d="M200 140 L214 248"/><path d="M300 140 L286 248"/><path d="M250 150 L250 226"/><path d="M250 150 L250 226"/><path d="M104 212 L214 248 L250 226"/><path d="M396 212 L286 248 L250 226"/><path d="M98 172 L140 238"/><path d="M402 172 L360 238"/><path d="M70 272 L168 272"/><path d="M430 272 L332 272"/><path d="M92 322 L220 334"/><path d="M408 322 L280 334"/><path d="M142 372 L222 402"/><path d="M358 372 L278 402"/><path d="M214 248 L222 402"/><path d="M286 248 L278 402"/><path d="M222 402 L206 448"/><path d="M278 402 L294 448"/><path d="M140 240 L214 262 L170 272 Z" fill="currentColor"/><path d="M360 240 L286 262 L330 272 Z" fill="currentColor"/><path d="M226 392 L274 392 L250 420 Z" fill="currentColor"/><path d="M214 418 L224 456 L232 424 Z" fill="currentColor"/><path d="M286 418 L276 456 L268 424 Z" fill="currentColor"/></svg></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>© <span id="yr"></span> Raae Wolfram · New York</span><span>Security strategy · Go-to-market · AI</span></div></footer>
+
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+$("#yr").textContent=new Date().getFullYear();
+const tick=()=>{ const c=$("#clock"); if(c) c.textContent=new Date().toLocaleTimeString("en-US",{timeZone:"America/New_York",hour:"2-digit",minute:"2-digit",hour12:false}); };
+tick(); setInterval(tick,15000);
+addEventListener("scroll",()=>{ const h=document.documentElement; $("#prog").style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight||1)*100)+"%"; },{passive:true});
+
+/* Photo slots: add files to /images with these names and they appear automatically */
+const icon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-8 8"/></svg>';
+$$(".photo").forEach(el=>{
+  if(!el.classList.contains("opt")) el.innerHTML=`<div class="ph">${icon}<b>${el.dataset.name}</b><code>${el.dataset.src}</code></div>`;
+  const img=new Image(); img.alt=el.dataset.alt;
+  img.onload=()=>{ el.appendChild(img); el.classList.add("loaded"); };
+  img.src=el.dataset.src;
+});
+
+const countUp=el=>{ const to=parseFloat(el.dataset.to), dec=+el.dataset.dec, pre=el.dataset.pre, suf=el.dataset.suf;
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const t0=performance.now(), d=1400; const f=t=>{ const p=Math.min(1,(t-t0)/d), e=1-Math.pow(1-p,3);
+    el.textContent=pre+(to*e).toFixed(dec)+suf; if(p<1) requestAnimationFrame(f); }; requestAnimationFrame(f); };
+const so=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ countUp(e.target); so.unobserve(e.target);} }),{threshold:.5});
+$$(".stat .v[data-to]").forEach(v=>so.observe(v));
+const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} }),{threshold:.06,rootMargin:"0px 0px -20px 0px"});
+$$(".rv").forEach((el,i)=>{ if(el.closest(".hero")) el.style.transitionDelay=(Math.min(i,8)*.06)+"s"; io.observe(el); });
+
+const secs=["what","results","projects","working","experience"].map(id=>document.getElementById(id));
+addEventListener("scroll",()=>{ let cur=null; secs.forEach(s=>{ if(s.getBoundingClientRect().top<innerHeight*.35) cur=s.id; });
+  $$("nav a").forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+cur)); },{passive:true});
+const menu=$("#menu"), nav=$("#nav");
+menu.onclick=()=>{ const o=nav.classList.toggle("open"); menu.setAttribute("aria-expanded",o); menu.textContent=o?"Close":"Menu"; };
+nav.addEventListener("click",e=>{ if(e.target.closest("a")){ nav.classList.remove("open"); menu.setAttribute("aria-expanded",false); menu.textContent="Menu";} });
+
+
+/* merge set-piece trigger (observe unclipped wrapper) */
+(()=>{ const m=document.getElementById("merge"); if(!m) return;
+  new IntersectionObserver((es,o)=>es.forEach(e=>{ if(e.isIntersecting){ m.classList.add("go"); setTimeout(()=>{const st=m.querySelector(".mg-st"); if(st) st.textContent="MERGED · 4 → 1";},2100); o.disconnect(); } }),{threshold:.45}).observe(m); })();
+/* ================= CINEMATIC JS ================= */
+(()=>{
+const RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const body=document.body;
+const endIntro=()=>{ body.classList.remove("intro"); document.querySelectorAll(".hero .rv").forEach((el,i)=>{ el.style.transitionDelay=(0.9+i*0.09)+"s"; el.classList.add("in"); }); };
+if(RM){ body.classList.remove("intro"); } else { requestAnimationFrame(()=>setTimeout(endIntro,80)); }
+
+/* draw wolves when visible */
+document.querySelectorAll("svg.draw path").forEach(p=>p.setAttribute("pathLength","1"));
+const dio=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("on"); dio.unobserve(e.target);} }),{threshold:.2});
+document.querySelectorAll("svg.draw").forEach(el=>dio.observe(el));
+
+/* heading wipes: observe parent (clipped element never reports intersecting) */
+const hio=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target._h.forEach(h=>h.classList.add("in")); hio.unobserve(e.target);} }),{threshold:.1});
+document.querySelectorAll("h2.rv").forEach(h=>{ const p=h.parentElement; (p._h=p._h||[]).push(h); hio.observe(p); });
+/* section flash lines */
+document.querySelectorAll("main section:not(.hero)").forEach(sec=>{ const f=document.createElement("span"); f.className="sec-flash"; sec.prepend(f);
+  new IntersectionObserver((es,o)=>es.forEach(e=>{ if(e.isIntersecting){ f.classList.add("on"); o.disconnect(); } }),{threshold:.15}).observe(sec); });
+
+if(RM) return;
+
+/* hero parallax: wolf follows mouse, hero recedes on scroll */
+const wm=document.querySelector(".hero .wm"), heroGrid=document.querySelector(".hero-grid");
+addEventListener("mousemove",e=>{ if(!wm) return; const x=(e.clientX/innerWidth-.5), y=(e.clientY/innerHeight-.5); wm.style.transform=`translate(${x*-28}px,${y*-20}px)`; },{passive:true});
+addEventListener("scroll",()=>{ const y=scrollY, h=innerHeight; if(y<h*1.2 && heroGrid){ const p=y/h; heroGrid.style.transform=`translateY(${p*60}px) scale(${1-p*.06})`; heroGrid.style.opacity=String(1-p*.9); } },{passive:true});
+
+/* 3D tilt + glare on cards */
+if(matchMedia("(pointer:fine)").matches){
+  document.querySelectorAll(".pillar,.res,.pj,.stat,.bc").forEach(c=>{
+    c.classList.add("tilt"); const g=document.createElement("span"); g.className="glare"; c.appendChild(g);
+    c.addEventListener("mousemove",e=>{ const r=c.getBoundingClientRect(), x=(e.clientX-r.left)/r.width, y=(e.clientY-r.top)/r.height;
+      c.style.transform=`perspective(1000px) rotateX(${(.5-y)*5}deg) rotateY(${(x-.5)*7}deg) translateY(-4px)`;
+      c.style.setProperty("--gx",(x*100)+"%"); c.style.setProperty("--gy",(y*100)+"%"); });
+    c.addEventListener("mouseleave",()=>{ c.style.transform=""; });
+  });
+}
+
+/* HUD canvas: perspective grid, radar sweeps, target locks */
+const cv=document.getElementById("fx"), cx=cv.getContext("2d"); let W,H,D,t0=performance.now();
+const size=()=>{ D=Math.min(devicePixelRatio||1,2); W=innerWidth; H=innerHeight; cv.width=W*D; cv.height=H*D; cx.setTransform(D,0,0,D,0,0); };
+size(); addEventListener("resize",size);
+const C="95,208,255";
+let locks=[]; const newLock=()=>({x:W*(.55+Math.random()*.4),y:H*(.15+Math.random()*.6),born:performance.now(),life:2600+Math.random()*1800,id:(Math.random()*0xffff|0).toString(16).toUpperCase().padStart(4,"0")});
+for(let i=0;i<3;i++){const l=newLock(); l.born-=Math.random()*2000; locks.push(l);}
+const mob=()=>W<720;
+(function loop(now){
+  const t=(now-t0)/1000, sy=scrollY, hero=sy<H*1.1;
+  cx.clearRect(0,0,W,H);
+  /* perspective floor grid, scrolls toward viewer */
+  const hz=H*.62, fade=Math.max(0,1-sy/(H*.9));
+  if(fade>0){
+    cx.lineWidth=1;
+    for(let i=-14;i<=14;i++){ const x=W/2+i*W*.09; cx.strokeStyle=`rgba(${C},${.10*fade*(1-Math.abs(i)/16)})`; cx.beginPath(); cx.moveTo(W/2+i*W*.012,hz); cx.lineTo(x+(x-W/2)*2.2,H); cx.stroke(); }
+    for(let j=0;j<14;j++){ const p=((j+(t*.35)%1)/14), y=hz+Math.pow(p,2.4)*(H-hz); cx.strokeStyle=`rgba(${C},${(.03+p*.13)*fade})`; cx.beginPath(); cx.moveTo(0,y); cx.lineTo(W,y); cx.stroke(); }
+    const g=cx.createLinearGradient(0,hz-60,0,hz+20); g.addColorStop(0,`rgba(${C},0)`); g.addColorStop(1,`rgba(${C},${.10*fade})`); cx.fillStyle=g; cx.fillRect(0,hz-60,W,80);
+  }
+  /* corner radar arcs */
+  const R=mob()?60:110;
+  [[R+24,H-R-24]].forEach(([x,y])=>{
+    cx.strokeStyle=`rgba(${C},.18)`; cx.lineWidth=1;
+    [1,.66,.33].forEach(k=>{cx.beginPath();cx.arc(x,y,R*k,0,7);cx.stroke();});
+    cx.beginPath();cx.moveTo(x-R,y);cx.lineTo(x+R,y);cx.moveTo(x,y-R);cx.lineTo(x,y+R);cx.stroke();
+    const a=t*1.4; const sg=cx.createConicGradient?cx.createConicGradient(a,x,y):null;
+    if(sg){ sg.addColorStop(0,`rgba(${C},.28)`); sg.addColorStop(.12,`rgba(${C},0)`); sg.addColorStop(1,`rgba(${C},0)`); cx.fillStyle=sg; cx.beginPath(); cx.arc(x,y,R,0,7); cx.fill(); }
+    cx.font="10px 'IBM Plex Mono',monospace"; cx.fillStyle=`rgba(${C},.55)`; cx.fillText("SCAN "+String(Math.floor((a*57.3)%360)).padStart(3,"0")+"°",x-R,y-R-8);
+  });
+  /* target locks in hero */
+  if(hero && !mob()){
+    locks=locks.map(l=>now-l.born>l.life?newLock():l);
+    for(const l of locks){
+      const age=(now-l.born)/l.life, ap=Math.min(1,age*4), out=age>.85?(1-age)/.15:1, s=40-ap*22, al=.6*out;
+      cx.strokeStyle=`rgba(${C},${al})`; cx.lineWidth=1.2; const k=7;
+      [[-1,-1],[1,-1],[-1,1],[1,1]].forEach(([dx,dy])=>{ const cxp=l.x+dx*s, cyp=l.y+dy*s; cx.beginPath(); cx.moveTo(cxp,cyp-dy*k); cx.lineTo(cxp,cyp); cx.lineTo(cxp-dx*k,cyp); cx.stroke(); });
+      if(ap>=1){ cx.fillStyle=`rgba(${C},${al})`; cx.font="9px 'IBM Plex Mono',monospace"; cx.fillText("LOCK "+l.id,l.x+s+6,l.y-s+8); cx.fillText(`${(l.x/W*100).toFixed(1)} / ${(l.y/H*100).toFixed(1)}`,l.x+s+6,l.y-s+20); }
+    }
+  }
+  /* horizontal sweep line every few seconds */
+  const sp=(t%6)/6; if(sp<.5){ const y=sp*2*H; const g2=cx.createLinearGradient(0,y-40,0,y); g2.addColorStop(0,`rgba(${C},0)`); g2.addColorStop(1,`rgba(${C},.07)`); cx.fillStyle=g2; cx.fillRect(0,y-40,W,40); cx.fillStyle=`rgba(${C},.18)`; cx.fillRect(0,y,W,1); }
+  requestAnimationFrame(loop);
+})(performance.now());
+})();
+</script>
+</body>
+</html>
