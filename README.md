@@ -46,6 +46,17 @@ The page has no photos right now. When you have them, send them over to be added
 
 All copy lives in `index.html`. Search for the sentence you want to change and edit it in place. Contact links (email and LinkedIn) are in the Contact section and in the hero buttons.
 
+## Role match (AI fit check)
+
+The Role match section builds an AI prompt from Raae's résumé for a specific role.
+
+- Visitors can paste a job posting URL, enter a role and company, or both. A pasted job description works too.
+- **Auto-loading a job link:** the page tries to pull the posting text through r.jina.ai, a free public page-reader. Some job sites block it. When that happens, the prompt includes the link and tells the AI to open it.
+- **Shareable pre-filled link:** add `?job=`, `?role=`, and `?company=` to the site URL, and the page fills in the form and runs it automatically. Example:
+  `https://chaoswrangler.github.io/?role=Head%20of%20AI%20Strategy&company=Skynet`
+- **Résumé source:** the prompt embeds your full résumé text (May 2026), with the phone number removed, plus a short "Additional context" block for portfolio-only work like AI builds and independent projects. Both live in `index.html` under `const PROFILE`. Paste in new résumé text there when you update it.
+- **Prompt length:** the full prompt is about 9,000 characters, too long to pre-fill in a link. So the Claude and ChatGPT buttons copy the prompt and open a new chat for the visitor to paste into.
+
 ## Notes
 - Animations respect the visitor's "reduce motion" setting. With it on, the intro, particles, and flares are turned off.
 - No tracking or analytics are included.
