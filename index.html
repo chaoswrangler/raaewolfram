@@ -577,6 +577,28 @@ body:not(.intro) .ship-meters i::after{width:var(--v)}
 .fc-go.running span::after{content:"";display:inline-block;width:1.4em;text-align:left;animation:dots 1s steps(4) infinite}
 .fc-go.running i{display:inline-block;width:14px;height:14px;border:2px solid rgba(95,208,255,.3);border-top-color:var(--cy);border-radius:50%;font-size:0;animation:spin .7s linear infinite}
 @keyframes dots{0%{content:""}25%{content:"."}50%{content:".."}75%{content:"..."}}
+
+/* ================= MOBILE HARDENING ================= */
+.menu{min-height:44px;min-width:64px}
+.pj-grid>*,.brain>*,.results>*,.pillars>*,.stats>*{min-width:0}
+.pj p,.bc p,.res p,.steps li{overflow-wrap:anywhere}
+@media (max-width:720px){
+  .ww .brain{grid-template-columns:1fr}
+  .pj-grid{grid-template-columns:minmax(0,1fr)}
+  .mg-hud,.fc-bar,.fc-out-h{font-size:11px!important}
+  .pj .tp,.res-top .co,.fc-in label em,.pj .st{font-size:12px}
+  .tl-a{font-size:12px}
+  .idp,.ship{max-width:100%}
+  h2{font-size:clamp(30px,8.6vw,40px)}
+}
+@media (max-width:400px){
+  .pj.feat h3{font-size:30px;overflow-wrap:anywhere}
+  .stats{grid-template-columns:1fr!important}
+  .stat .v{font-size:40px!important}
+  .stat .org{display:inline-block!important}
+  .kick span:nth-child(n+3){display:none}
+  .mg-node span{font-size:8.5px!important;letter-spacing:.04em!important}
+}
 /* ================= CINEMATIC LAYER ================= */
 #fx{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.9}
 main,footer{position:relative;z-index:1}
@@ -737,7 +759,7 @@ body.intro .hero .rv{opacity:0!important;transform:translateY(24px)!important}
         <div class="bc rv"><span>01</span><h3>I see the whole system</h3><p>My master's in public health is in epidemiology. I look at security problems the way I'd look at an outbreak: where it starts, how it spreads, and which single move changes the curve.</p></div>
         <div class="bc rv"><span>02</span><h3>I think from the other side of the table</h3><p>Before I build anything, I work out how the attacker, the buyer, and the competitor will see it. Slippy, FAFOSec, and the competitive program all came from that habit.</p></div>
         <div class="bc rv"><span>03</span><h3>I design and build the AI myself</h3><p>I design agentic workflows end to end: what each agent does, where its facts come from, how its work gets checked, and how people actually use it. Then I explain it to a CISO the same afternoon.</p></div>
-        <div class="bc rv"><span>04</span><h3>I build from zero</h3><p>I played a defining role in taking Defender Experts from concept to market and created S.T.A.R., S.H.I.E.L.D., and PHANTOM along the way. From naming and positioning to launch and execution, I turn ideas into working programs and keep building as the business evolves.</p></div>
+        <div class="bc rv"><span>04</span><h3>I build from zero</h3><p>I played a defining role in taking Defender Experts from concept to market and created the programs that carried it there. From naming and positioning to launch and execution, I turn ideas into working programs and keep building as the business evolves.</p></div>
       </div>
       <div class="merge" id="merge">
         <div class="mg-hud"><span>FIG.01 // CONCEPT TO CUSTOMER</span><span class="mg-st">IN MOTION</span></div>
@@ -770,9 +792,9 @@ body.intro .hero .rv{opacity:0!important;transform:translateY(24px)!important}
         <div class="l">annual revenue potential on a flagship product I delivered</div>
       </div>
       <div class="stat rv"><span class="cn tl"></span><span class="cn tr"></span><span class="cn bl"></span><span class="cn br"></span>
-        <div class="st-top"><span class="i">03 · INTEL</span><span class="org">MICROSOFT</span></div>
-        <div class="v" data-to="320" data-dec="0" data-pre="" data-suf="+">320+</div>
-        <div class="l">indicators of compromise published for defenders</div>
+        <div class="st-top"><span class="i">03 · AI INTEL</span><span class="org">MICROSOFT</span></div>
+        <div class="v" data-to="96" data-dec="0" data-pre="" data-suf="%">96%</div>
+        <div class="l">of daily OSINT noise cleared by my AI agents, so analysts go straight to the threats that matter</div>
       </div>
       <div class="stat rv"><span class="cn tl"></span><span class="cn tr"></span><span class="cn bl"></span><span class="cn br"></span>
         <div class="st-top"><span class="i">04 · SCALE</span><span class="org">AWS</span></div>
