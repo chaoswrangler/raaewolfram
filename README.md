@@ -1,62 +1,84 @@
-# raaewolfram.github.io
+# chaoswrangler.github.io
 
-Portfolio site for Raae Wolfram (pronounced "Ray"). It's a single page with no build step and runs on GitHub Pages.
+Portfolio site for Raae Wolfram (pronounced "Ray"). Everything, including every photo, lives in one file, `index.html`. There's no build step, and it runs on GitHub Pages.
 
 ## Repo layout
 
 ```
-index.html          the whole site
-README.md           this file
-images/           (empty for now; photos go here later)
+index.html   the whole site, with all photos built in
+README.md    this file
 ```
 
-## Publishing on GitHub Pages
+You don't need an `images/` folder. If one is left over from an earlier version, you can delete it.
 
-1. Create a repo named `<your-github-username>.github.io` (or any repo name).
-2. Upload `index.html`, `README.md`, and the `images/` folder.
+## Publishing and updating
+
+**First time:**
+1. Create a repo named `chaoswrangler.github.io`, so the site lives at the root address.
+2. Upload `index.html` and `README.md`.
 3. Go to **Settings → Pages**, set **Source** to "Deploy from a branch", pick `main` and `/ (root)`, and save.
-4. The site goes live at `https://<username>.github.io/` (or `/<repo-name>/`) within a minute or two.
+4. The site goes live at `https://chaoswrangler.github.io` within a minute or two.
 
-## Photos (not on the site yet)
+**Every update after that:**
+1. In the repo, go to **Add file → Upload files**, drop in the new `index.html`, and click **Commit changes**. It replaces the old file.
+2. Wait a minute or two, then hard-refresh the site (Ctrl+Shift+R or Cmd+Shift+R; on a phone, pull down to reload).
+3. Optional: open the **Actions** tab. A green check next to "pages build and deployment" means it's live.
 
-The page has no photos right now. When you have them, send them over to be added, or add them yourself with the snippets below.
+## Page order
 
-### Headshot: `images/portrait.jpg`
-- **Where it goes:** the profile console in the hero, in place of the wolf reticle.
-- **Shape:** square or 4:5. Example: 1200 × 1500 px. It's cropped to a circle.
-- **Framing:** head and shoulders, centered, with a little space above your head.
-- **Look:** a dark or neutral background (navy, charcoal, slate) and cool, soft light. Avoid bright white walls and busy backgrounds.
-- **File size:** under 400 KB, exported as JPG at about 80% quality.
-- **To add it:** in `index.html`, find `<div class="reticle"` and put this line just above it:
-  `<img class="ship-photo" src="images/portrait.jpg" alt="Portrait of Raae Wolfram">`
+1. Hero: photo, intro, pronunciation, and the TL;DR link to Role match
+2. How I operate (Playbook), with the "concept to customer" panel
+3. Stat tiles and the Now/Before strip
+4. Photo carousel 1
+5. What I do
+6. Outcomes
+7. Photo carousel 2
+8. S.T.A.R. webinar series, featuring episode 10
+9. Projects, with links to live builds and repos
+10. Photo carousel 3
+11. Experience
+12. Photo carousel 4
+13. Role match, the AI fit-check prompt builder
+14. FAQ (9 questions)
+15. About me
+16. Let's talk, with the wolf head and the binary moon
 
-### Speaking photo: `images/speaking.jpg`
-- **Where it goes:** the Experience section, above Education.
-- **Shape:** landscape, 16:10. Example: 1600 × 1000 px.
-- **Content:** you presenting, at BSides, Experts Live, a webinar set, or a briefing, with a stage, screen, or audience visible.
-- **File size:** under 500 KB.
-- **To add it:** in `index.html`, find `<div class="side">` and put this line just below it:
-  `<img class="stage-photo" src="images/speaking.jpg" alt="Raae speaking at a conference">`
+## Photos
 
-### Tips
-- Shrink images before uploading (squoosh.app is free and works in the browser).
-- File names are case-sensitive: `portrait.jpg` works, `Portrait.JPG` doesn't.
+The photos are built into `index.html`, so they show up anywhere the file is opened.
 
-## Editing text
+- **Main photo:** this is the profile picture in the hero console.
+- **Carousels:** there are 4 carousels with 12 photos, all labeled FIELD LOG 01–12. Each one plays as a film-style frame:
+  - The HUD shows "SCANNING FOR THREATS," then "PAYLOAD DETECTED · HIGH VALUE."
+  - Target brackets lock onto each photo, the caption types itself out, and a glitch transition plays between photos.
+  - There's a row of thumbnails, plus arrows and swipe.
+  - Each carousel advances every 6 seconds and pauses on hover.
+- **Changing captions:** search `index.html` for `FIELD LOG`. The captions are the `"txt"` values next to each tag.
+- **Adding, removing or reordering photos:** this means re-encoding images into the file, so the easiest way is to send the new photos to Claude and ask for an updated `index.html`.
+- **File size:** the page is about 2 MB because of the photos. Each extra photo adds roughly 100–200 KB.
 
-All copy lives in `index.html`. Search for the sentence you want to change and edit it in place. Contact links (email and LinkedIn) are in the Contact section and in the hero buttons.
+## S.T.A.R. reel
+
+- Episode 10 is the featured video and starts at 0:00. Its title and channel load live from YouTube.
+- Episodes are listed in `STAR_EPISODES` in `index.html`. Remove `feature:true` to show every episode as a carousel.
+- Episode 9's YouTube ID is still blank. Add it to `STAR_EPISODES` if you want it in the list.
 
 ## Role match (AI fit check)
 
-The Role match section builds an AI prompt from Raae's résumé for a specific role.
+Role match builds an AI prompt from Raae's résumé for a specific role.
 
-- Visitors can paste a job posting URL, enter a role and company, or both. A pasted job description works too.
-- **Auto-loading a job link:** the page tries to pull the posting text through r.jina.ai, a free public page-reader. Some job sites block it. When that happens, the prompt includes the link and tells the AI to open it.
-- **Shareable pre-filled link:** add `?job=`, `?role=`, and `?company=` to the site URL, and the page fills in the form and runs it automatically. Example:
-  `https://chaoswrangler.github.io/?role=Head%20of%20AI%20Strategy&company=Skynet`
-- **Résumé source:** the prompt embeds your full résumé text (May 2026), with the phone number removed, plus a short "Additional context" block for portfolio-only work like AI builds and independent projects. Both live in `index.html` under `const PROFILE`. Paste in new résumé text there when you update it.
-- **Prompt length:** the full prompt is about 9,000 characters, too long to pre-fill in a link. So the Claude and ChatGPT buttons copy the prompt and open a new chat for the visitor to paste into.
+- Every field is optional. Visitors can paste a job posting URL, enter a role and company, paste a job description, or any combination.
+- **Job links:** the page tries to pull the posting text through r.jina.ai, a free page reader. Some job sites block it. When that happens, the prompt includes the link and asks the AI to open it.
+- **Pre-filled links:** add `?job=`, `?role=` or `?company=` to the site address, and the page fills in the form and runs it. For example: `https://chaoswrangler.github.io/?role=Head%20of%20AI%20Strategy&company=Skynet`
+- **Résumé source:** the prompt includes your full résumé text from May 2026 (with no phone number), plus an "Additional context" block for portfolio-only work. Both live in `index.html` under `const PROFILE`. Paste in new résumé text there when you update it.
+- **Long prompts:** the Claude and ChatGPT buttons copy the prompt and open a new chat for pasting, because the prompt is too long to put in a link.
+
+## FAQ and AI search
+
+The FAQ appears on the page and also in hidden structured data (JSON-LD) that search engines and AI assistants read. If you edit an answer by hand, change it in both places: search `index.html` for the question text and you'll find two copies.
 
 ## Notes
-- Animations respect the visitor's "reduce motion" setting. With it on, the intro, particles, and flares are turned off.
-- No tracking or analytics are included.
+
+- Animations follow the visitor's "reduce motion" setting. With it on, the intro, particles, glitches and the wolf's entrance are turned off.
+- Everything is built to work on phones, down to the smallest screen width.
+- There's no tracking or analytics.
