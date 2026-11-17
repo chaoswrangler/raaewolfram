@@ -852,6 +852,21 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .about-txt p{font-size:clamp(17px,1.5vw,20px);line-height:1.6;color:var(--ice);margin:0 0 14px}
 .about-txt p:last-child{margin:0;color:rgba(214,234,255,.75)}
 @media (max-width:860px){.about-card{grid-template-columns:1fr;gap:24px;padding:34px 22px;border-radius:22px}}
+
+/* captions below the photo, never on top of it */
+.pc-under{display:flex;justify-content:space-between;align-items:flex-start;gap:28px;margin-top:20px;padding:0 6px}
+.pband.car .pc-cap{position:static;max-width:none;flex:1;min-width:0}
+.pband.car .pc-cap .pc-txt{font-size:clamp(20px,2.4vw,34px);text-shadow:none}
+.pband.car .pc-strip{position:static;flex:none}
+.pband.car .pc-slides::after{background:radial-gradient(ellipse at center,transparent 60%,rgba(0,0,0,.45))}
+.pband.car .pc-s .fg{inset:3% 0;height:94%}
+@media (max-width:860px){
+  .pband.car .pb-frame{aspect-ratio:1/1}
+  .pband.car .pc-s .fg{inset:4% 0;height:92%}
+  .pc-under{flex-direction:column;gap:14px;margin-top:14px}
+  .pband.car .pc-strip button{width:58px}
+  .pc-hud .pc-count{display:none}
+}
 .intro-lead{display:block;color:var(--ice);font-weight:600;margin-bottom:8px}
 .stage-photo[hidden],.ship-photo[hidden]{display:none}
 @media (max-width:860px){.pband,.pband.r{grid-template-columns:1fr;gap:16px}.pband.r .pb-frame{order:0}.pb-frame{border-radius:16px}}
@@ -1076,12 +1091,11 @@ body.intro .hero .rv{opacity:0!important;transform:translateY(24px)!important}
     <div class="pc-lock"><i></i><i></i><i></i><i></i></div>
     <span class="pb-br a"></span><span class="pb-br b"></span><span class="pb-br c"></span><span class="pb-br d"></span><span class="pb-scan"></span>
     <div class="pc-hud"><span class="rec"><b></b><em>SCANNING</em></span><span class="pc-count"></span><span class="tc">00:00:00:00</span></div>
-    <figcaption class="pc-cap"><b class="pc-tag"></b><span class="pc-txt"></span></figcaption>
-    <div class="pc-strip"></div>
     <button class="pc-nav prev" type="button" aria-label="Previous photo">‹</button><button class="pc-nav next" type="button" aria-label="Next photo">›</button>
     <div class="pc-flash"></div>
     <div class="pc-bar"><i></i></div>
   </div>
+  <div class="pc-under"><figcaption class="pc-cap"><b class="pc-tag"></b><span class="pc-txt"></span></figcaption><div class="pc-strip"></div></div>
 </figure>
 <!-- ================= WHAT I DO ================= -->
 <section id="what">
@@ -1169,12 +1183,11 @@ body.intro .hero .rv{opacity:0!important;transform:translateY(24px)!important}
     <div class="pc-lock"><i></i><i></i><i></i><i></i></div>
     <span class="pb-br a"></span><span class="pb-br b"></span><span class="pb-br c"></span><span class="pb-br d"></span><span class="pb-scan"></span>
     <div class="pc-hud"><span class="rec"><b></b><em>SCANNING</em></span><span class="pc-count"></span><span class="tc">00:00:00:00</span></div>
-    <figcaption class="pc-cap"><b class="pc-tag"></b><span class="pc-txt"></span></figcaption>
-    <div class="pc-strip"></div>
     <button class="pc-nav prev" type="button" aria-label="Previous photo">‹</button><button class="pc-nav next" type="button" aria-label="Next photo">›</button>
     <div class="pc-flash"></div>
     <div class="pc-bar"><i></i></div>
   </div>
+  <div class="pc-under"><figcaption class="pc-cap"><b class="pc-tag"></b><span class="pc-txt"></span></figcaption><div class="pc-strip"></div></div>
 </figure>
 <!-- ================= S.T.A.R. REEL ================= -->
 <section id="reel" class="dark2 reelsec" style="margin-top:0;border-radius:0">
@@ -1277,12 +1290,11 @@ body.intro .hero .rv{opacity:0!important;transform:translateY(24px)!important}
     <div class="pc-lock"><i></i><i></i><i></i><i></i></div>
     <span class="pb-br a"></span><span class="pb-br b"></span><span class="pb-br c"></span><span class="pb-br d"></span><span class="pb-scan"></span>
     <div class="pc-hud"><span class="rec"><b></b><em>SCANNING</em></span><span class="pc-count"></span><span class="tc">00:00:00:00</span></div>
-    <figcaption class="pc-cap"><b class="pc-tag"></b><span class="pc-txt"></span></figcaption>
-    <div class="pc-strip"></div>
     <button class="pc-nav prev" type="button" aria-label="Previous photo">‹</button><button class="pc-nav next" type="button" aria-label="Next photo">›</button>
     <div class="pc-flash"></div>
     <div class="pc-bar"><i></i></div>
   </div>
+  <div class="pc-under"><figcaption class="pc-cap"><b class="pc-tag"></b><span class="pc-txt"></span></figcaption><div class="pc-strip"></div></div>
 </figure>
 <!-- ================= EXPERIENCE ================= -->
 <section id="experience" class="dark2">
@@ -1324,12 +1336,11 @@ body.intro .hero .rv{opacity:0!important;transform:translateY(24px)!important}
     <div class="pc-lock"><i></i><i></i><i></i><i></i></div>
     <span class="pb-br a"></span><span class="pb-br b"></span><span class="pb-br c"></span><span class="pb-br d"></span><span class="pb-scan"></span>
     <div class="pc-hud"><span class="rec"><b></b><em>SCANNING</em></span><span class="pc-count"></span><span class="tc">00:00:00:00</span></div>
-    <figcaption class="pc-cap"><b class="pc-tag"></b><span class="pc-txt"></span></figcaption>
-    <div class="pc-strip"></div>
     <button class="pc-nav prev" type="button" aria-label="Previous photo">‹</button><button class="pc-nav next" type="button" aria-label="Next photo">›</button>
     <div class="pc-flash"></div>
     <div class="pc-bar"><i></i></div>
   </div>
+  <div class="pc-under"><figcaption class="pc-cap"><b class="pc-tag"></b><span class="pc-txt"></span></figcaption><div class="pc-strip"></div></div>
 </figure>
 <!-- ================= FIT CHECK ================= -->
 <section id="fit" class="dark2 fitsec" style="margin-top:0;border-radius:0">
