@@ -227,8 +227,8 @@ h1 .tag{display:block;font-size:.34em;line-height:1.15;letter-spacing:-.03em;mar
 .pj.wide{grid-column:1/-1}
 .pj.wide p{max-width:70ch}
 @media (max-width:1400px){.hud-meta{display:none}}
-@media (max-width:1240px){nav a i{display:none}}
-@media (max-width:1140px){.mk-t small{display:none}}
+@media (max-width:1560px){nav a i{display:none}}
+@media (max-width:1360px){.mk-t small{display:none}}
 @media (max-width:1060px){.pj-grid{grid-template-columns:1fr 1fr}.pj.feat{grid-column:1/-1;grid-row:auto}}
 @media (max-width:720px){.pj-grid{grid-template-columns:1fr;gap:14px}.pj{padding:22px 20px}.pj.feat{padding:26px 22px}.pj.feat .btn{width:100%}}
 
@@ -945,6 +945,7 @@ body.intro .hero .rv{opacity:0!important;transform:translateY(24px)!important}
       <a href="#experience"><i>05</i>Experience</a>
       <a href="#fit"><i>06</i>Role match</a>
       <a href="#faq"><i>07</i>FAQ</a>
+      <a href="#about"><i>08</i>About</a>
     </nav>
     <div class="hud-meta" aria-hidden="true"><span class="pulse"></span>NYC <b id="clock">--:--</b></div>
     <a class="hbtn" href="#contact"><span>Contact</span></a>
@@ -1905,7 +1906,8 @@ if(RM) return;
 /* hero parallax: wolf follows mouse, hero recedes on scroll */
 const wm=document.querySelector(".hero .wm"), heroGrid=document.querySelector(".hero-grid");
 addEventListener("mousemove",e=>{ if(!wm) return; const x=(e.clientX/innerWidth-.5), y=(e.clientY/innerHeight-.5); wm.style.transform=`translate(${x*-28}px,${y*-20}px)`; },{passive:true});
-addEventListener("scroll",()=>{ const y=scrollY, h=innerHeight; if(y<h*1.2 && heroGrid){ const p=y/h; heroGrid.style.transform=`translateY(${p*60}px) scale(${1-p*.06})`; heroGrid.style.opacity=String(1-p*.9); } },{passive:true});
+addEventListener("scroll",()=>{ const y=scrollY, h=innerHeight; if(innerWidth<=860){ if(heroGrid&&heroGrid.style.opacity){heroGrid.style.opacity="";heroGrid.style.transform="";} return; }
+  if(y<h*1.2 && heroGrid){ const p=y/h; const f=Math.max(0,p-.45); heroGrid.style.transform=`translateY(${p*30}px) scale(${1-f*.04})`; heroGrid.style.opacity=String(Math.max(.25,1-f*1.1)); } },{passive:true});
 
 /* 3D tilt + glare on cards */
 if(matchMedia("(pointer:fine)").matches){
